@@ -27,7 +27,12 @@
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
-        
+        code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+            
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
@@ -549,7 +554,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Web","value":2},{"name":"Java","value":7},{"name":"Other","value":2}],
+                data: [{"name":"Java","value":7},{"name":"Web","value":2},{"name":"Other","value":2}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -573,7 +578,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         xAxis: [
             {
                 type: 'category',
-                data: ["Activiti","转","Cron","Http","Date","Mac","google","JMail"]
+                data: ["Activiti","转","Http","Cron","Mac","Date","google","JMail"]
             }
         ],
         yAxis: [
