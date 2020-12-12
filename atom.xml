@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://china_zyb.gitee.io/"/>
-  <updated>2020-08-02T04:56:48.517Z</updated>
+  <updated>2020-12-12T10:19:42.395Z</updated>
   <id>http://china_zyb.gitee.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>获取文件头信息进行文件类型识别验证</title>
+    <link href="http://china_zyb.gitee.io/2020/12/12/huo-qu-wen-jian-tou-xin-xi-jin-xing-wen-jian-lei-xing-shi-bie-yan-zheng/"/>
+    <id>http://china_zyb.gitee.io/2020/12/12/huo-qu-wen-jian-tou-xin-xi-jin-xing-wen-jian-lei-xing-shi-bie-yan-zheng/</id>
+    <published>2020-12-12T10:19:42.000Z</published>
+    <updated>2020-12-12T10:19:42.395Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; java&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>js时间处理工具</title>
