@@ -5,9 +5,9 @@
   <subtitle>一个码农的胡言乱语……</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://china_zyb.gitee.io/zyb/"/>
+  <link href="http://china_zyb.gitee.io/"/>
   <updated>2020-08-02T04:56:48.517Z</updated>
-  <id>http://china_zyb.gitee.io/zyb/</id>
+  <id>http://china_zyb.gitee.io/</id>
   
   <author>
     <name>Z先生</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>js时间处理工具</title>
-    <link href="http://china_zyb.gitee.io/zyb/2020/08/02/js-shi-jian-chu-li-gong-ju/"/>
-    <id>http://china_zyb.gitee.io/zyb/2020/08/02/js-shi-jian-chu-li-gong-ju/</id>
+    <link href="http://china_zyb.gitee.io/2020/08/02/js-shi-jian-chu-li-gong-ju/"/>
+    <id>http://china_zyb.gitee.io/2020/08/02/js-shi-jian-chu-li-gong-ju/</id>
     <published>2020-08-02T04:56:48.000Z</published>
     <updated>2020-08-02T04:56:48.517Z</updated>
     
@@ -40,17 +40,17 @@
     </summary>
     
     
-      <category term="Web" scheme="http://china_zyb.gitee.io/zyb/categories/Web/"/>
+      <category term="Web" scheme="http://china_zyb.gitee.io/categories/Web/"/>
     
     
-      <category term="Date" scheme="http://china_zyb.gitee.io/zyb/tags/Date/"/>
+      <category term="Date" scheme="http://china_zyb.gitee.io/tags/Date/"/>
     
   </entry>
   
   <entry>
     <title>Java检查收取邮件</title>
-    <link href="http://china_zyb.gitee.io/zyb/2019/08/31/java-jian-cha-shou-qu-you-jian/"/>
-    <id>http://china_zyb.gitee.io/zyb/2019/08/31/java-jian-cha-shou-qu-you-jian/</id>
+    <link href="http://china_zyb.gitee.io/2019/08/31/java-jian-cha-shou-qu-you-jian/"/>
+    <id>http://china_zyb.gitee.io/2019/08/31/java-jian-cha-shou-qu-you-jian/</id>
     <published>2019-08-31T08:17:52.000Z</published>
     <updated>2020-04-28T01:35:38.166Z</updated>
     
@@ -67,17 +67,17 @@
     </summary>
     
     
-      <category term="Java" scheme="http://china_zyb.gitee.io/zyb/categories/Java/"/>
+      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
     
     
-      <category term="JMail" scheme="http://china_zyb.gitee.io/zyb/tags/JMail/"/>
+      <category term="JMail" scheme="http://china_zyb.gitee.io/tags/JMail/"/>
     
   </entry>
   
   <entry>
     <title>activiti ie下保存模型问题</title>
-    <link href="http://china_zyb.gitee.io/zyb/2019/08/31/activiti-ie-xia-bao-cun-mo-xing-wen-ti/"/>
-    <id>http://china_zyb.gitee.io/zyb/2019/08/31/activiti-ie-xia-bao-cun-mo-xing-wen-ti/</id>
+    <link href="http://china_zyb.gitee.io/2019/08/31/activiti-ie-xia-bao-cun-mo-xing-wen-ti/"/>
+    <id>http://china_zyb.gitee.io/2019/08/31/activiti-ie-xia-bao-cun-mo-xing-wen-ti/</id>
     <published>2019-08-31T08:15:13.000Z</published>
     <updated>2019-09-01T03:25:32.000Z</updated>
     
@@ -94,19 +94,19 @@
     </summary>
     
     
-      <category term="Java" scheme="http://china_zyb.gitee.io/zyb/categories/Java/"/>
+      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
     
     
-      <category term="Activiti" scheme="http://china_zyb.gitee.io/zyb/tags/Activiti/"/>
+      <category term="Activiti" scheme="http://china_zyb.gitee.io/tags/Activiti/"/>
     
-      <category term="转" scheme="http://china_zyb.gitee.io/zyb/tags/%E8%BD%AC/"/>
+      <category term="转" scheme="http://china_zyb.gitee.io/tags/%E8%BD%AC/"/>
     
   </entry>
   
   <entry>
     <title>JAVA后台调用http接口</title>
-    <link href="http://china_zyb.gitee.io/zyb/2019/08/31/java-hou-tai-diao-yong-http-jie-kou/"/>
-    <id>http://china_zyb.gitee.io/zyb/2019/08/31/java-hou-tai-diao-yong-http-jie-kou/</id>
+    <link href="http://china_zyb.gitee.io/2019/08/31/java-hou-tai-diao-yong-http-jie-kou/"/>
+    <id>http://china_zyb.gitee.io/2019/08/31/java-hou-tai-diao-yong-http-jie-kou/</id>
     <published>2019-08-31T08:13:19.000Z</published>
     <updated>2019-09-01T03:25:39.000Z</updated>
     
@@ -123,17 +123,17 @@
     </summary>
     
     
-      <category term="Java" scheme="http://china_zyb.gitee.io/zyb/categories/Java/"/>
+      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
     
     
-      <category term="Http" scheme="http://china_zyb.gitee.io/zyb/tags/Http/"/>
+      <category term="Http" scheme="http://china_zyb.gitee.io/tags/Http/"/>
     
   </entry>
   
   <entry>
     <title>activiti获取模型图片或部署图片</title>
-    <link href="http://china_zyb.gitee.io/zyb/2019/08/31/activiti-huo-qu-mo-xing-tu-pian-huo-bu-shu-tu-pian/"/>
-    <id>http://china_zyb.gitee.io/zyb/2019/08/31/activiti-huo-qu-mo-xing-tu-pian-huo-bu-shu-tu-pian/</id>
+    <link href="http://china_zyb.gitee.io/2019/08/31/activiti-huo-qu-mo-xing-tu-pian-huo-bu-shu-tu-pian/"/>
+    <id>http://china_zyb.gitee.io/2019/08/31/activiti-huo-qu-mo-xing-tu-pian-huo-bu-shu-tu-pian/</id>
     <published>2019-08-31T08:10:14.000Z</published>
     <updated>2019-09-01T03:25:45.000Z</updated>
     
@@ -152,17 +152,17 @@
     </summary>
     
     
-      <category term="Java" scheme="http://china_zyb.gitee.io/zyb/categories/Java/"/>
+      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
     
     
-      <category term="Activiti" scheme="http://china_zyb.gitee.io/zyb/tags/Activiti/"/>
+      <category term="Activiti" scheme="http://china_zyb.gitee.io/tags/Activiti/"/>
     
   </entry>
   
   <entry>
     <title>activiti获取流程跟踪图</title>
-    <link href="http://china_zyb.gitee.io/zyb/2019/08/31/activiti-huo-qu-liu-cheng-gen-zong-tu/"/>
-    <id>http://china_zyb.gitee.io/zyb/2019/08/31/activiti-huo-qu-liu-cheng-gen-zong-tu/</id>
+    <link href="http://china_zyb.gitee.io/2019/08/31/activiti-huo-qu-liu-cheng-gen-zong-tu/"/>
+    <id>http://china_zyb.gitee.io/2019/08/31/activiti-huo-qu-liu-cheng-gen-zong-tu/</id>
     <published>2019-08-31T06:18:53.000Z</published>
     <updated>2019-09-01T03:25:51.000Z</updated>
     
@@ -181,17 +181,17 @@
     </summary>
     
     
-      <category term="Java" scheme="http://china_zyb.gitee.io/zyb/categories/Java/"/>
+      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
     
     
-      <category term="Activiti" scheme="http://china_zyb.gitee.io/zyb/tags/Activiti/"/>
+      <category term="Activiti" scheme="http://china_zyb.gitee.io/tags/Activiti/"/>
     
   </entry>
   
   <entry>
     <title>activiti流程跟踪图连接线文字不显示问题</title>
-    <link href="http://china_zyb.gitee.io/zyb/2019/08/31/activiti-liu-cheng-gen-zong-tu-lian-jie-xian-wen-zi-bu-xian-shi-wen-ti/"/>
-    <id>http://china_zyb.gitee.io/zyb/2019/08/31/activiti-liu-cheng-gen-zong-tu-lian-jie-xian-wen-zi-bu-xian-shi-wen-ti/</id>
+    <link href="http://china_zyb.gitee.io/2019/08/31/activiti-liu-cheng-gen-zong-tu-lian-jie-xian-wen-zi-bu-xian-shi-wen-ti/"/>
+    <id>http://china_zyb.gitee.io/2019/08/31/activiti-liu-cheng-gen-zong-tu-lian-jie-xian-wen-zi-bu-xian-shi-wen-ti/</id>
     <published>2019-08-31T06:17:27.000Z</published>
     <updated>2019-09-01T03:25:58.000Z</updated>
     
@@ -208,17 +208,17 @@
     </summary>
     
     
-      <category term="Java" scheme="http://china_zyb.gitee.io/zyb/categories/Java/"/>
+      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
     
     
-      <category term="Activiti" scheme="http://china_zyb.gitee.io/zyb/tags/Activiti/"/>
+      <category term="Activiti" scheme="http://china_zyb.gitee.io/tags/Activiti/"/>
     
   </entry>
   
   <entry>
     <title>Cron表达式生成器</title>
-    <link href="http://china_zyb.gitee.io/zyb/2019/08/31/cron-biao-da-shi-sheng-cheng-qi/"/>
-    <id>http://china_zyb.gitee.io/zyb/2019/08/31/cron-biao-da-shi-sheng-cheng-qi/</id>
+    <link href="http://china_zyb.gitee.io/2019/08/31/cron-biao-da-shi-sheng-cheng-qi/"/>
+    <id>http://china_zyb.gitee.io/2019/08/31/cron-biao-da-shi-sheng-cheng-qi/</id>
     <published>2019-08-31T05:05:07.000Z</published>
     <updated>2019-08-31T06:08:36.000Z</updated>
     
@@ -235,17 +235,17 @@
     </summary>
     
     
-      <category term="Web" scheme="http://china_zyb.gitee.io/zyb/categories/Web/"/>
+      <category term="Web" scheme="http://china_zyb.gitee.io/categories/Web/"/>
     
     
-      <category term="Cron" scheme="http://china_zyb.gitee.io/zyb/tags/Cron/"/>
+      <category term="Cron" scheme="http://china_zyb.gitee.io/tags/Cron/"/>
     
   </entry>
   
   <entry>
     <title>关闭Mac OS系统程序崩溃报告</title>
-    <link href="http://china_zyb.gitee.io/zyb/2019/08/28/guan-bi-mac-os-xi-tong-cheng-xu-beng-kui-bao-gao/"/>
-    <id>http://china_zyb.gitee.io/zyb/2019/08/28/guan-bi-mac-os-xi-tong-cheng-xu-beng-kui-bao-gao/</id>
+    <link href="http://china_zyb.gitee.io/2019/08/28/guan-bi-mac-os-xi-tong-cheng-xu-beng-kui-bao-gao/"/>
+    <id>http://china_zyb.gitee.io/2019/08/28/guan-bi-mac-os-xi-tong-cheng-xu-beng-kui-bao-gao/</id>
     <published>2019-08-28T08:51:26.000Z</published>
     <updated>2019-08-31T03:41:21.000Z</updated>
     
@@ -262,17 +262,17 @@
     </summary>
     
     
-      <category term="Other" scheme="http://china_zyb.gitee.io/zyb/categories/Other/"/>
+      <category term="Other" scheme="http://china_zyb.gitee.io/categories/Other/"/>
     
     
-      <category term="Mac" scheme="http://china_zyb.gitee.io/zyb/tags/Mac/"/>
+      <category term="Mac" scheme="http://china_zyb.gitee.io/tags/Mac/"/>
     
   </entry>
   
   <entry>
     <title>高效用Google</title>
-    <link href="http://china_zyb.gitee.io/zyb/2019/08/28/gao-xiao-yong-google/"/>
-    <id>http://china_zyb.gitee.io/zyb/2019/08/28/gao-xiao-yong-google/</id>
+    <link href="http://china_zyb.gitee.io/2019/08/28/gao-xiao-yong-google/"/>
+    <id>http://china_zyb.gitee.io/2019/08/28/gao-xiao-yong-google/</id>
     <published>2019-08-28T07:13:07.000Z</published>
     <updated>2019-08-31T09:12:54.000Z</updated>
     
@@ -289,12 +289,12 @@
     </summary>
     
     
-      <category term="Other" scheme="http://china_zyb.gitee.io/zyb/categories/Other/"/>
+      <category term="Other" scheme="http://china_zyb.gitee.io/categories/Other/"/>
     
     
-      <category term="转" scheme="http://china_zyb.gitee.io/zyb/tags/%E8%BD%AC/"/>
+      <category term="转" scheme="http://china_zyb.gitee.io/tags/%E8%BD%AC/"/>
     
-      <category term="google" scheme="http://china_zyb.gitee.io/zyb/tags/google/"/>
+      <category term="google" scheme="http://china_zyb.gitee.io/tags/google/"/>
     
   </entry>
   
