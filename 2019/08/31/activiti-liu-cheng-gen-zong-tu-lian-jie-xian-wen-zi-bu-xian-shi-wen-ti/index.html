@@ -46,9 +46,8 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Z先生的乱语" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Z先生的乱语" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 <body>
 
@@ -438,7 +437,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    103
+                    94
                 </div>
                 
 
@@ -456,14 +455,14 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>需要反编译流程图片处理类，新建同包同名类，复制反编译内容，添加连接线文字处理。<br><code>activiti-image-generator-5.22.0.jar!/org/activiti/image/impl/DefaultProcessDiagramGenerator.class</code><br>587行左右<code>if(labelGraphicInfo != null) &#123;</code>添加else处理。</p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span>labelGraphicInfo <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <p>需要反编译流程图片处理类，新建同包同名类，复制反编译内容，添加连接线文字处理。<br><code>activiti-image-generator-5.22.0.jar!/org/activiti/image/impl/DefaultProcessDiagramGenerator.class</code><br>587行左右<code>if(labelGraphicInfo != null) {</code>添加else处理。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span>labelGraphicInfo <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     processDiagramCanvas<span class="token punctuation">.</span><span class="token function">drawLabel</span><span class="token punctuation">(</span>sequenceFlow<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> labelGraphicInfo<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//反编译class得到，主要处理线文字不显示</span>
     GraphicInfo lineCenter <span class="token operator">=</span> <span class="token function">getLineCenter</span><span class="token punctuation">(</span>graphicInfoList<span class="token punctuation">)</span><span class="token punctuation">;</span>
     processDiagramCanvas<span class="token punctuation">.</span><span class="token function">drawLabel</span><span class="token punctuation">(</span>sequenceFlow<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> lineCenter<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr />
@@ -732,7 +731,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">7.7k</span>
+            <span class="white-color">7.1k</span>
             
 
             <br>

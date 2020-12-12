@@ -56,9 +56,8 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Z先生的乱语" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Z先生的乱语" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 <body>
 
@@ -448,14 +447,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    6 分
                 </div>
                 
                 
@@ -466,7 +465,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
+                <pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">/**
  * 日期格式化
  * yyyy/yy 年
  * MM/M 月
@@ -478,9 +477,9 @@
  * SS/S 毫秒
  * 除年份、星期 外的配置项 单双位表示，小于10的值是否要前面补0，双位补0，单位不补
  * @param formatStr 格式化字符串 默认为yyyy-MM-dd
- * @returns &amp;#123;*&amp;#125;
+ * @returns {*}
  */</span>
-Date<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>Format <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>formatStr<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+Date<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>Format <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>formatStr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>formatStr<span class="token operator">==</span><span class="token string">''</span><span class="token operator">||</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> formatStr<span class="token operator">==</span><span class="token string">'undefined'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>formatStr<span class="token operator">=</span><span class="token string">'yyyy-MM-dd'</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> Week <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'星期日'</span><span class="token punctuation">,</span> <span class="token string">'星期一'</span><span class="token punctuation">,</span> <span class="token string">'星期二'</span><span class="token punctuation">,</span> <span class="token string">'星期三'</span><span class="token punctuation">,</span> <span class="token string">'星期四'</span><span class="token punctuation">,</span> <span class="token string">'星期五'</span><span class="token punctuation">,</span> <span class="token string">'星期六'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     formatStr <span class="token operator">=</span> formatStr<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/yyyy/</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -499,31 +498,31 @@ Date<span class="token punctuation">.</span>prototype<span class="token punctuat
     formatStr <span class="token operator">=</span> formatStr<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/SS/</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getMilliseconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">9</span> <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getMilliseconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token string">'0'</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getMilliseconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     formatStr <span class="token operator">=</span> formatStr<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/S/g</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getMilliseconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> formatStr<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">/**
  * 获得某月的天数
  * @param paraYear 年
  * @param paraMonth 月
- * @returns &amp;#123;number&amp;#125;
+ * @returns {number}
  */</span>
-<span class="token keyword">function</span> <span class="token function">getMonthDays</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">,</span> paraMonth<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">getMonthDays</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">,</span> paraMonth<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> monthStartDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">,</span> paraMonth <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> monthEndDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">,</span> paraMonth<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> days <span class="token operator">=</span> <span class="token punctuation">(</span>monthEndDate <span class="token operator">-</span> monthStartDate<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">86400000</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//24 * 60 * 60 * 1000</span>
     <span class="token keyword">return</span> days<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">/**
  * 获得某月的结束日期
  * @param paraYear 年
  * @param paraMonth 月
- * @returns &amp;#123;string&amp;#125; yyyy-MM-dd
+ * @returns {string} yyyy-MM-dd
  */</span>
-<span class="token keyword">function</span> <span class="token function">getMonthEndDate</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">,</span> paraMonth<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">getMonthEndDate</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">,</span> paraMonth<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> monthEndDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">,</span> paraMonth <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token function">getMonthDays</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">,</span> paraMonth<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> monthEndDate<span class="token punctuation">.</span><span class="token function">Format</span><span class="token punctuation">(</span><span class="token string">'yyyy-MM-dd'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">/**
  * 获取某年某周的开始日期
@@ -531,7 +530,7 @@ Date<span class="token punctuation">.</span>prototype<span class="token punctuat
  * @param weekIndex 周数
  * @returns yyyy-MM-dd
  */</span>
-<span class="token keyword">function</span> <span class="token function">getBeginDateOfWeek</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">,</span> weekIndex<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">getBeginDateOfWeek</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">,</span> weekIndex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> firstDay <span class="token operator">=</span> <span class="token function">getFirstWeekBegDay</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//7*24*3600000 是一星期的时间毫秒数,(JS中的日期精确到毫秒)</span>
     <span class="token keyword">var</span> time <span class="token operator">=</span> <span class="token punctuation">(</span>weekIndex <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">604800000</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//7 * 24 * 3600000</span>
@@ -539,7 +538,7 @@ Date<span class="token punctuation">.</span>prototype<span class="token punctuat
     <span class="token comment" spellcheck="true">//为日期对象 date 重新设置成时间 time</span>
     beginDay<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>firstDay<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> time<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> beginDay<span class="token punctuation">.</span><span class="token function">Format</span><span class="token punctuation">(</span><span class="token string">'yyyy-MM-dd'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 
 <span class="token comment" spellcheck="true">/**
@@ -548,7 +547,7 @@ Date<span class="token punctuation">.</span>prototype<span class="token punctuat
  * @param weekIndex 周数
  * @returns yyyy-MM-dd
  */</span>
-<span class="token keyword">function</span> <span class="token function">getEndDateOfWeek</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">,</span> weekIndex<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">getEndDateOfWeek</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">,</span> weekIndex<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> firstDay <span class="token operator">=</span> <span class="token function">getFirstWeekBegDay</span><span class="token punctuation">(</span>paraYear<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//7*24*3600000 是一星期的时间毫秒数,(JS中的日期精确到毫秒)</span>
     <span class="token keyword">var</span> time <span class="token operator">=</span> <span class="token punctuation">(</span>weekIndex <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">604800000</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//7 * 24 * 3600000</span>
@@ -557,145 +556,145 @@ Date<span class="token punctuation">.</span>prototype<span class="token punctuat
     <span class="token comment" spellcheck="true">//为日期对象 date 重新设置成时间 time</span>
     endDay<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>firstDay<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> weekTime <span class="token operator">+</span> time<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> endDay<span class="token punctuation">.</span><span class="token function">Format</span><span class="token punctuation">(</span><span class="token string">'yyyy-MM-dd'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">/**
  * 获取某年的第一天
- * @param &amp;#123;*&amp;#125; year 年份
+ * @param {*} year 年份
  * @returns Date对象
  */</span>
-<span class="token keyword">function</span> <span class="token function">getFirstWeekBegDay</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">getFirstWeekBegDay</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> tempdate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>year<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> temp <span class="token operator">=</span> tempdate<span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>temp <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>temp <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> tempdate<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     temp <span class="token operator">=</span> temp <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token number">7</span> <span class="token punctuation">:</span> temp<span class="token punctuation">;</span>
     tempdate <span class="token operator">=</span> tempdate<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span>tempdate<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">8</span> <span class="token operator">-</span> temp<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>tempdate<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">/**
  * 获取日期为某年的第几周
  * @param date date对象
- * @returns &amp;#123;number&amp;#125; 年周位数
+ * @returns {number} 年周位数
  */</span>
-<span class="token keyword">function</span> <span class="token function">getWeekIndex</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">getWeekIndex</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> firstDay <span class="token operator">=</span> <span class="token function">getFirstWeekBegDay</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>date <span class="token operator">&lt;</span> firstDay<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>date <span class="token operator">&lt;</span> firstDay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         firstDay <span class="token operator">=</span> <span class="token function">getFirstWeekBegDay</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token keyword">var</span> d <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> firstDay<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">86400000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>d <span class="token operator">/</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">/**
  * 获取2个日期之间的日期
  * @param begin 开始 yyyy-MM-dd
  * @param end 结束 yyyy-MM-dd
- * @returns &amp;#123;Array&amp;#125; yyyy-MM-dd日期数组
+ * @returns {Array} yyyy-MM-dd日期数组
  */</span>
-<span class="token keyword">function</span> <span class="token function">getDayBetween</span><span class="token punctuation">(</span>begin<span class="token punctuation">,</span> end<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">getDayBetween</span><span class="token punctuation">(</span>begin<span class="token punctuation">,</span> end<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> ab <span class="token operator">=</span> begin<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> ae <span class="token operator">=</span> end<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> db <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>ab<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token function">Number</span><span class="token punctuation">(</span>ab<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Number</span><span class="token punctuation">(</span>ab<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> de <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>ae<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token function">Number</span><span class="token punctuation">(</span>ae<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Number</span><span class="token punctuation">(</span>ae<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token operator">=</span> db<span class="token punctuation">;</span> k <span class="token operator">&lt;=</span> de<span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token operator">=</span> db<span class="token punctuation">;</span> k <span class="token operator">&lt;=</span> de<span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Format</span><span class="token punctuation">(</span><span class="token string">'yyyy-MM-dd'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         k <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">86400000</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//24 * 60 * 60 * 1000</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">/**
  * 数字转中文，0不做处理
  * 数字字符转中文，而不是数字转换中文数字
  * 2018 转换为 二0一八
  * @param num
- * @returns &amp;#123;string&amp;#125; 如：2018 转换为 二0一八
+ * @returns {string} 如：2018 转换为 二0一八
  */</span>
-<span class="token keyword">function</span> <span class="token function">numberCharToChinese</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">numberCharToChinese</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> china <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">,</span> <span class="token string">'一'</span><span class="token punctuation">,</span> <span class="token string">'二'</span><span class="token punctuation">,</span> <span class="token string">'三'</span><span class="token punctuation">,</span> <span class="token string">'四'</span><span class="token punctuation">,</span> <span class="token string">'五'</span><span class="token punctuation">,</span> <span class="token string">'六'</span><span class="token punctuation">,</span> <span class="token string">'七'</span><span class="token punctuation">,</span> <span class="token string">'八'</span><span class="token punctuation">,</span> <span class="token string">'九'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> english <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> english<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> english<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         arr <span class="token operator">+</span><span class="token operator">=</span> china<span class="token punctuation">[</span>english<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token keyword">return</span> arr<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">/**
  * 数字转中文
- * @number &amp;#123;Integer&amp;#125; 形如123的数字
- * @return &amp;#123;String&amp;#125; 返回转换成的形如 一百二十三 的字符串
+ * @number {Integer} 形如123的数字
+ * @return {String} 返回转换成的形如 一百二十三 的字符串
  */</span>
-<span class="token keyword">function</span> <span class="token function">numberToChinese</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">numberToChinese</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> units <span class="token operator">=</span> <span class="token string">'个十百千万@#%亿^&amp;~'</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> chars <span class="token operator">=</span> <span class="token string">'零一二三四五六七八九'</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token punctuation">(</span>number <span class="token operator">+</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         s <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">12</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">12</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'too big'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> j <span class="token operator">=</span> a<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> j<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">||</span> j <span class="token operator">==</span> <span class="token number">5</span> <span class="token operator">||</span> j <span class="token operator">==</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//两位数 处理特殊的 1*</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> j <span class="token operator">=</span> a<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> j<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">||</span> j <span class="token operator">==</span> <span class="token number">5</span> <span class="token operator">||</span> j <span class="token operator">==</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//两位数 处理特殊的 1*</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                     <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'1'</span><span class="token punctuation">)</span> s<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>chars<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
                     s<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>chars<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
                 s<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>chars<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">!=</span> j<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">!=</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 s<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>units<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j <span class="token operator">-</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> s<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/零([十百千万亿@#%^&amp;~])/g</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>m<span class="token punctuation">,</span> d<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//优先处理 零百 零千 等</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> s<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/零([十百千万亿@#%^&amp;~])/g</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>m<span class="token punctuation">,</span> d<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//优先处理 零百 零千 等</span>
         b <span class="token operator">=</span> units<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>b <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>b <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>d <span class="token operator">==</span> <span class="token string">'亿'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> d<span class="token punctuation">;</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>d <span class="token operator">==</span> <span class="token string">'万'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> d<span class="token punctuation">;</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>j <span class="token operator">-</span> b<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">'零'</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
         <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/零+/g</span><span class="token punctuation">,</span> <span class="token string">'零'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/零([万亿])/g</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>m<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 零百 零千处理后 可能出现 零零相连的 再处理结尾为零的</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/零+/g</span><span class="token punctuation">,</span> <span class="token string">'零'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/零([万亿])/g</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>m<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 零百 零千处理后 可能出现 零零相连的 再处理结尾为零的</span>
         <span class="token keyword">return</span> b<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/亿[万千百]/g</span><span class="token punctuation">,</span> <span class="token string">'亿'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[零]$/</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[@#%^&amp;~]/g</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/亿[万千百]/g</span><span class="token punctuation">,</span> <span class="token string">'亿'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[零]$/</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/[@#%^&amp;~]/g</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
             <span class="token string">'@'</span><span class="token punctuation">:</span> <span class="token string">'十'</span><span class="token punctuation">,</span>
             <span class="token string">'#'</span><span class="token punctuation">:</span> <span class="token string">'百'</span><span class="token punctuation">,</span>
             <span class="token string">'%'</span><span class="token punctuation">:</span> <span class="token string">'千'</span><span class="token punctuation">,</span>
             <span class="token string">'^'</span><span class="token punctuation">:</span> <span class="token string">'十'</span><span class="token punctuation">,</span>
             <span class="token string">'&amp;'</span><span class="token punctuation">:</span> <span class="token string">'百'</span><span class="token punctuation">,</span>
             <span class="token string">'~'</span><span class="token punctuation">:</span> <span class="token string">'千'</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/([亿万])([一-九])/g</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>m<span class="token punctuation">,</span> d<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/([亿万])([一-九])/g</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>m<span class="token punctuation">,</span> d<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         c <span class="token operator">=</span> units<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>j <span class="token operator">-</span> c<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> d <span class="token operator">+</span> <span class="token string">'零'</span> <span class="token operator">+</span> b
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
         <span class="token keyword">return</span> m<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token comment" spellcheck="true">/**
  * 日期转中文，1-7 周一 - 周日
  * @param weekType 类型 zhweek：星期，其它： 周
  * @param val 周数 1-7（周一 - 周日）
- * @returns &amp;#123;String&amp;#125; 星期一/周一
+ * @returns {String} 星期一/周一
  */</span>
-<span class="token keyword">function</span> <span class="token function">zhWeek</span><span class="token punctuation">(</span>weekType<span class="token punctuation">,</span> val<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>weekType <span class="token operator">==</span> <span class="token string">'zhweek'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">zhWeek</span><span class="token punctuation">(</span>weekType<span class="token punctuation">,</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>weekType <span class="token operator">==</span> <span class="token string">'zhweek'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         weekType <span class="token operator">=</span> <span class="token string">'星期'</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
         weekType <span class="token operator">=</span> <span class="token string">'周'</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>val <span class="token operator">==</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>val <span class="token operator">==</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> weekType <span class="token operator">+</span> <span class="token string">"日"</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> weekType <span class="token operator">+</span> <span class="token function">numberCharToChinese</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr />
@@ -961,7 +960,7 @@ import java.util.HashMap;
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">7.7k</span>
+            <span class="white-color">7.1k</span>
             
 
             <br>

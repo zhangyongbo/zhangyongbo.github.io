@@ -47,9 +47,8 @@ modeler作图使用svg（可缩放矢量图形），在ie中如果使用了箭�
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Z先生的乱语" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Z先生的乱语" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 <body>
 
@@ -443,7 +442,7 @@ modeler作图使用svg（可缩放矢量图形），在ie中如果使用了箭�
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    460
+                    458
                 </div>
                 
 
@@ -468,14 +467,14 @@ modeler作图使用svg（可缩放矢量图形），在ie中如果使用了箭�
 <p>chrome：</p>
 <pre><code>&lt;path id=&quot;sid-CB6F9DD4-D150-4072-8EF6-75B5AE54E9BF_1&quot; d=&quot;M210.609375 135L254.15625 135 &quot; stroke=&quot;#585858&quot; fill=&quot;none&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; marker-start=&quot;url(#sid-CB6F9DD4-D150-4072-8EF6-75B5AE54E9BFstart)&quot; marker-end=&quot;url(#sid-CB6F9DD4-D150-4072-8EF6-75B5AE54E9BFend)&quot;&gt;&lt;/path&gt;</code></pre>
 <p>对比可知，chrome中的<code>setAttributeNS</code>函数不会对url()做特殊处理，而IE中会对url()中的字符用引号包裹！在此设置断点重新画一个path后，发现引号删不掉（nodevalue无法修改为无引号），把值设置为url(bbbb)会自动变为url(“bbbb”)！</p>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>在<code>toolbar-default-actions.js</code>中的<code>$scope.save = function (successCallback)&#123;&#125;</code>函数中增加以下红色代码：</p>
-<pre class="line-numbers language-javascript"><code class="language-javascript">
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>在<code>toolbar-default-actions.js</code>中的<code>$scope.save = function (successCallback){}</code>函数中增加以下红色代码：</p>
+<pre class=" language-javascript"><code class="language-javascript">
 <span class="token keyword">var</span> svgDOM <span class="token operator">=</span> DataManager<span class="token punctuation">.</span><span class="token function">serialize</span><span class="token punctuation">(</span>svgClone<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//解决ie保存报错</span>
 svgDOM <span class="token operator">=</span> svgDOM<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/marker-start="url\("#/g</span><span class="token punctuation">,</span><span class="token string">"marker-start=\"url(#"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/start"\)"/g</span><span class="token punctuation">,</span><span class="token string">"start\)\""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 svgDOM <span class="token operator">=</span> svgDOM<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/marker-mid="url\("#/g</span><span class="token punctuation">,</span><span class="token string">"marker-mid=\"url(#"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/mid"\)"/g</span><span class="token punctuation">,</span><span class="token string">"mid\)\""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 svgDOM <span class="token operator">=</span> svgDOM<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/marker-end="url\("#/g</span><span class="token punctuation">,</span><span class="token string">"marker-end=\"url(#"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/end"\)"/g</span><span class="token punctuation">,</span><span class="token string">"end\)\""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//解决ie保存报错</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment" spellcheck="true">//解决ie保存报错</span></code></pre>
 <p>接下来清除缓存即可</p>
 
             </div>
@@ -744,7 +743,7 @@ svgDOM <span class="token operator">=</span> svgDOM<span class="token punctuatio
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">7.7k</span>
+            <span class="white-color">7.1k</span>
             
 
             <br>
