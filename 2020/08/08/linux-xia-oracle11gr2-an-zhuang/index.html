@@ -1,0 +1,1077 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="baidu-site-verification" content="code-whzqTlXqBU" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="Linux下Oracle11gR2安装, zhangyongbo Z先生 JAVA CMS">
+    <meta name="description" content="Linux下Oracle11gR2安装Linux环境配置
+OS:Fedora 15DB:Oracle 11gR2将Oracle安装到home/oracle_11目录  
+
+配置过程：本文来自Oracle官方文档+网上资料
+Oracle官方文">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Linux下Oracle11gR2安装 | Z先生的乱语</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+            
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?0900dd4fd11951a12b6218080955e1c8";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Z先生的乱语" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/zyb.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Z先生的乱语</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/zyb.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Z先生的乱语</div>
+        <div class="logo-desc">
+            
+            Z先生 | JAVA | CMS
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhangyongbo" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhangyongbo" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/84.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Linux下Oracle11gR2安装
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        <span class="chip bg-color">无标签</span>
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Linux/" class="post-category" target="_blank">
+                            Linux
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-08-08
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    Z先生
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Linux下Oracle11gR2安装"><a href="#Linux下Oracle11gR2安装" class="headerlink" title="Linux下Oracle11gR2安装"></a>Linux下Oracle11gR2安装</h1><h1 id="Linux环境配置"><a href="#Linux环境配置" class="headerlink" title="Linux环境配置"></a>Linux环境配置</h1><blockquote>
+<p>OS:Fedora 15<br>DB:Oracle 11gR2<br>将Oracle安装到home/oracle_11目录  </p>
+</blockquote>
+<p>配置过程：本文来自Oracle官方文档+网上资料</p>
+<p>Oracle官方文档：<a href="http://www.oracle.com/pls/db112/homepage" target="_blank" rel="noopener">http://www.oracle.com/pls/db112/homepage</a></p>
+<h1 id="1-以root用户登录到Linux"><a href="#1-以root用户登录到Linux" class="headerlink" title="1. 以root用户登录到Linux"></a>1. 以root用户登录到Linux</h1><h1 id="2-检查机器硬件要求"><a href="#2-检查机器硬件要求" class="headerlink" title="2. 检查机器硬件要求"></a>2. 检查机器硬件要求</h1><h2 id="2-1内存要求"><a href="#2-1内存要求" class="headerlink" title="2.1内存要求"></a>2.1内存要求</h2><pre class=" language-sh"><code class="language-sh">至少需要1GB的内存  
+查看机器内存大小  
+`# grep MemTotal /proc/meminfo`</code></pre>
+<h2 id="2-2-swap空间要求"><a href="#2-2-swap空间要求" class="headerlink" title="2.2 swap空间要求"></a>2.2 swap空间要求</h2><pre class=" language-sh"><code class="language-sh">内存大小                 swap空间大小  
+1 GB ～ 2 GB             内存大小*1.5  
+2 GB ～ 16 GB            内存大小  
+> 16 GB          16 GB  
+查看swap空间大小  
+`# grep SwapTotal /proc/meminfo`</code></pre>
+<h2 id="2-3-空闲硬盘要求"><a href="#2-3-空闲硬盘要求" class="headerlink" title="2.3 空闲硬盘要求"></a>2.3 空闲硬盘要求</h2><pre class=" language-sh"><code class="language-sh">/tmp目录需要1 GB的空闲空间  
+查看/tmp目录的空闲空间  
+# df -h /tmp
+安装Oracle软件需要的硬盘空间  
+Enterprise Edition   3.95（software files）+1.7（data files）
+Standard Edition     3.88（software files）+1.5（data files）  
+查看机器中每个磁盘的空闲空间  
+# df -h </code></pre>
+<h1 id="3-检查操作系统软件要求"><a href="#3-检查操作系统软件要求" class="headerlink" title="3. 检查操作系统软件要求"></a>3. 检查操作系统软件要求</h1><p>Oracle官方文档中包含了多个Linux系统的要求，详细请参考官方文档</p>
+<p>Fedora 15 （RHEL 5.x）的软件要求列表如下：</p>
+<pre class=" language-sh"><code class="language-sh">binutils-2.17.50.0.6  
+compat-libstdc++-33-3.2.3  
+elfutils-libelf-0.125  
+elfutils-libelf-devel-0.125  
+elfutils-libelf-devel-static-0.125  
+gcc-4.1.2  
+gcc-c++-4.1.2  
+glibc-2.5-24  
+glibc-common-2.5  
+glibc-devel-2.5  
+glibc-headers-2.5  
+kernel-headers-2.6.18  
+ksh-20060214  
+libaio-0.3.106  
+libaio-devel-0.3.106   
+libgcc-4.1.2  
+libgomp-4.1.2  
+libstdc++-4.1.2   
+libstdc++-devel-4.1.2  
+make-3.81  
+numactl-devel-0.9.8.i386  
+sysstat-7.0.2  
+查看系统是否安装了该软件包  
+# rpm -q package_name  </code></pre>
+<h1 id="4-创建安装Oracle需要的系统组和用户"><a href="#4-创建安装Oracle需要的系统组和用户" class="headerlink" title="4. 创建安装Oracle需要的系统组和用户"></a>4. 创建安装Oracle需要的系统组和用户</h1><pre class=" language-sh"><code class="language-sh">创建Oracle Inventory 组  
+# groupadd oinstall  
+创建OSDBA 组  
+# groupadd dba  
+创建Oracle软件创建者  
+# useradd -g oinstall -G dba oracle  
+修改oracle用户的密码  
+# passwd oracle  </code></pre>
+<h1 id="5-配置系统内核参数值"><a href="#5-配置系统内核参数值" class="headerlink" title="5. 配置系统内核参数值"></a>5. 配置系统内核参数值</h1><pre class=" language-sh"><code class="language-sh">编辑/etc/sysctl.conf文件  
+vim /etc/sysctl.conf  
+在打开的文件底部添加下面内容  
+fs.aio-max-nr = 1048576  
+fs.file-max = 6815744  
+kernel.shmall = 2097152  
+kernel.shmmax = 536870912  
+kernel.shmmni = 4096  
+kernel.sem = 250 32000 100 128  
+net.ipv4.ip_local_port_range = 9000 65500  
+net.core.rmem_default = 262144  
+net.core.rmem_max = 4194304  
+net.core.wmem_default = 262144  
+net.core.wmem_max = 1048586  
+改变当前系统内核参数值（让/etc/sysctl.conf立即生效）  
+# sysctl -p  </code></pre>
+<h1 id="6-检查Oracle安装用户（oracle）资源限制"><a href="#6-检查Oracle安装用户（oracle）资源限制" class="headerlink" title="6. 检查Oracle安装用户（oracle）资源限制"></a>6. 检查Oracle安装用户（oracle）资源限制</h1><pre class=" language-sh"><code class="language-sh">修改/etc/security/limits.conf文件  
+vim /etc/security/limits.conf  
+在打开的文件底部添加下面内容  
+oracle              soft    nproc   2047  
+oracle              hard    nproc   16384  
+oracle              soft    nofile  1024  
+oracle              hard    nofile  65536  
+oracle              soft    stack   10240  </code></pre>
+<h1 id="7-创建安装Oracle软件所需要的目录"><a href="#7-创建安装Oracle软件所需要的目录" class="headerlink" title="7. 创建安装Oracle软件所需要的目录"></a>7. 创建安装Oracle软件所需要的目录</h1><pre class=" language-sh"><code class="language-sh"># mkdir -p /home/oracle_11/app/  
+# chown -R oracle:oinstall /home/oracle_11/app/  
+# chmod -R 775 /home/oracle_11/app/  </code></pre>
+<h1 id="8-配置安装Oracle安装用户（oracle）的环境"><a href="#8-配置安装Oracle安装用户（oracle）的环境" class="headerlink" title="8. 配置安装Oracle安装用户（oracle）的环境"></a>8. 配置安装Oracle安装用户（oracle）的环境</h1><pre class=" language-sh"><code class="language-sh">编辑 /home/oracle/.bash_profile  
+vim /home/oracle/.bash_profile  
+在打开的文件中添加下面内容  
+umask 022  
+export ORACLE_BASE=/home/oracle_11/app  
+export ORACLE_HOME=$ORACLE_BASE/oracle/product/11.2.0/db_1  
+export ORACLE_SID=orcl --Oracle实例名，可修改  
+export PATH=$PATH:HOME/bin:$ORACLE_HOME/bin  
+编辑 /etc/pam.d/login  
+vim /etc/pam.d/login  
+在打开的文件中添加下面内容  
+session required /lib/security/pam_limits.so  
+session required pam_limits.so  
+编辑 /etc/profile  
+vim /etc/profile  
+在打开的文件中添加下面内容  
+if [ $USER = "oracle" ]; then  
+   if [ $SHELL = "/bin/ksh" ]; then  
+      ulimit -p 16384  
+      ulimit -n 65536  
+   else  
+      ulimit -u 16384 -n 65536  
+   fi  
+fi  </code></pre>
+<h1 id="9-查看系统是否支持图形界面"><a href="#9-查看系统是否支持图形界面" class="headerlink" title="9. 查看系统是否支持图形界面"></a>9. 查看系统是否支持图形界面</h1><pre class=" language-sh"><code class="language-sh">查看root用户下是否已设置DISPLAY变量  
+# echo $DISPLAY  
+如果有值出现，则说明已设置DISPLAY变量；否则，就需要手动设置DISPLAY  
+# export DISPLAY=localhost:0.0
+# su - Oracle
+# export DISPLAY=localhost:0.0
+root用户执行 xhost +</code></pre>
+<h1 id="10-开始安装Oracle软件"><a href="#10-开始安装Oracle软件" class="headerlink" title="10. 开始安装Oracle软件"></a>10. 开始安装Oracle软件</h1><pre class=" language-sh"><code class="language-sh"># cd /tmp  
+# unzip linux_11gR2_database_1of2.zip linux_11gR2_database_2of2.zip  
+# xhost +  
+# su - oracle  
+$ export DISPLAY=:0  
+$ cd /database  
+$ ./runInstaller  
+接下来系统会启动Oracle图形安装界面，安装过程和Windows下一样  </code></pre>
+<hr>
+<p><font color="red">如果是用ssh和ftp连接的linux安装时可以通过VNC连接linux</font></p>
+<ol>
+<li>启动 VNC Server： 打开终端执行：vncserver</li>
+<li>使用vncpasswd命令设置一个vnc server密码。如果不设置密码，vncserver将无法启动。</li>
+<li>默认情况下VNC Viewer只能看到 VNC Server的命令行。 要VNC Viewer上可以看到Linux桌面需要做如下设置： 在VNC Viewer所在的机器上，取消/root/.vnc/xstartup文件中下面两行的注释即可: <code>unset SESSION_MANAGER exec /etc/X11/xinit/xinitrc</code><br>将最后一行，“twm”改为startkde（这个是KDE环境）或gnome-session（这个是GNOME环境）；</li>
+</ol>
+<hr>
+<p>在安装过程中，会提示在root用户下运行两个脚本文件（具体是哪两个，不记得了，按提示操作即可）。<br>Linux下的Oracle在安装结束后是处于运行状态的。重启机器后，Oracle不会像在Windows下那样将Oracle添加到Windows服务，在linux下需要手动启动Orcle服务</p>
+<pre class=" language-sh"><code class="language-sh">以oracle用户下，执行下面的命令  
+进入sqlplus  
+$ sqlplus /nolog  
+以sysdba的身份连接到数据库，并启动Oracle数据库引擎  
+SQL> conn /as sysdba  
+SQL> startup  
+退出sqlplus，运行Listener  
+SQL> exit  
+$ lsnrctl start  </code></pre>
+<p>这样就可以连接到Oracle数据库了。如果想用Oracle提供的EM来管理Oracle的话还需要启动EM控制台，运行如下命令：<br><code>$ emctl start dbconsole </code><br>这样就可以通过<a href="http://localhost:1158/em/" target="_blank" rel="noopener">http://localhost:1158/em/</a> 来访问EM控制台了。</p>
+<p>使用dbstart和dbstop来启动Oracle服务<br>可能使用dbstart命令来启动数据库更方便一些,但初次安装完oracle之后使用dbstart命令会报这样的错误<br>ORACLE_HOME_LISTNER is not SET, unable to auto-start Oracle Net Listener<br>Usage: /u01/app/oracle/product/11.2/db/bin/dbstart ORACLE_HOME<br>出现这样错误的原因是由于没有设置ORACLE_HOME_LISTNER的原因,我们查看一下dbstart这个文件<br><code>more  /home/oracle_11/app/oracle/product/11.2/db/bin/dbstart  </code><br>部分内容如下</p>
+<pre class=" language-sh"><code class="language-sh"># First argument is used to bring up Oracle Net Listener  
+ORACLE_HOME_LISTNER=$1  
+if [ ! $ORACLE_HOME_LISTNER ] ; then  
+  echo "ORACLE_HOME_LISTNER is not SET, unable to auto-start Oracle Net Listener"  
+  echo "Usage: $0 ORACLE_HOME"  
+else  
+  LOG=$ORACLE_HOME_LISTNER/listener.log  
+  # Set the ORACLE_HOME for the Oracle Net Listener, it gets reset to  
+  # a different ORACLE_HOME for each entry in the oratab.  
+  export ORACLE_HOME=$ORACLE_HOME_LISTNER  </code></pre>
+<p>解决方案就算将<code>$ORACLE_HOME</code>赋值给<code>$ORACLE_HOME_LINTNER</code>,保存,退出<br>再一次执行dbstart,但是没有反映,没有报错,如果我们需要使用dbstart,则需要在/etc/oratab这个文件中的实例最后的N改成Y,如下<br><code>orcl:/home/oracle_11/app/oracle/product/11.2/db:Y</code></p>
+<blockquote>
+<p>OK,保存,再试一下dbstart命令,返回结果如下<br><code>Processing Database instance &quot;orcl&quot;: log file /home/oracle_11/app/oracle/product/11.2.0/db_1/startup.log</code><br>dbshut进行同样的设置.这样,以后就可以在启动监听之后直接使用dbstart和dbshut命令来启动和关闭数据了</p>
+</blockquote>
+<p>将Oracle服务添加到Linux开机启动项，以root用户建立/etc/rc.d/init.d/oradb脚本文件，文件内容如下：</p>
+<pre class=" language-sh"><code class="language-sh">#!/bin/bash  
+# chkconfig: 2345 90 10  
+export ORACLE_BASE=/home/oracle_11/app/  
+export ORACLE_HOME=$ORACLE_BASE/oracle/product/11.2.0/db_1  
+export ORACLE_SID=orcl  
+export PATH=$PATH:$ORACLE_HOME/bin  
+ORCL_OWN="oracle"  
+# if the executables do not exist -- display error  
+if [ ! -f $ORACLE_HOME/bin/dbstart -o ! -d $ORACLE_HOME ]  
+then  
+   echo "Oracle startup: cannot start"  
+   exit 1  
+fi  
+# depending on parameter -- start, stop, restart  
+# of the instance and listener or usage display  
+case "$1" in  
+start)  
+# Oracle listener and instance startup  
+echo -n "Starting Oracle: "  
+su - $ORCL_OWN -c "$ORACLE_HOME/bin/dbstart"  
+touch /var/lock/subsys/oradb  
+su - $ORCL_OWN -c "$ORACLE_HOME/bin/emctl start dbconsole"  
+echo "OK"  
+;;  
+stop)  
+# Oracle listener and instance shutdown  
+echo -n "Shutdown Oracle: "  
+su - $ORCL_OWN -c "$ORACLE_HOME/bin/emctl stop dbconsole"  
+su - $ORCL_OWN -c "$ORACLE_HOME/bin/dbshut"  
+rm -f /var/lock/subsys/oradb  
+echo "OK"  
+;;  
+reload|restart)  
+$0 stop  
+$1 start  
+;;  
+*)  
+echo "Usage: 'basename $0' start|stop|restart|reload"  
+exit 1  
+esac  
+exit 0  </code></pre>
+<p>将该文件添加到开机启动</p>
+<pre><code># chmod 755 /etc/rc.d/init.d/oradb  
+# chkconfig --add oradb</code></pre>
+<p>重启服务</p>
+<pre><code># service oradb stop  
+# service oradb start  </code></pre>
+<p>下次启动机器的时候，Oracle服务会随机器一起启动。</p>
+<p>Oracle数据库安装、配置完成。</p>
+<blockquote>
+<p>Tip：Oracle数据库的默认端口号：1521，Oracle提供的EM管理器默认端口号是1158。</p>
+</blockquote>
+
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script src="/libs/others/md5.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '968642bc6faa447e79d0',
+        clientSecret: 'cbbda9af6a5ab1a49a053eab50aa6be46a418da4',
+        repo: 'gitalk',
+        owner: 'zhangyongbo',
+        admin: "zhangyongbo",
+        id: md5('2020/08/08/linux-xia-oracle11gr2-an-zhuang/'),
+        createIssueManually:false,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/08/08/strings-wen-jian-bian-jie-ma/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/46.jpg" class="responsive-img" alt="strings文件编解码">
+                        
+                        <span class="card-title">strings文件编解码</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            strings文件编解码sudo plutil -convert binary1 SystemFolderLocalizations.strings
+sudo plutil -convert xml1 ~/Desktop/SystemFol
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Other/" class="post-category" target="_blank">
+                                    Other
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/08/08/centos-xia-an-zhuang-jdk-bin/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/86.jpg" class="responsive-img" alt="CentOS下安装JDK(bin)">
+                        
+                        <span class="card-title">CentOS下安装JDK(bin)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            CentOS下安装JDK(bin)信息查看安装好的CentOS会自带OpenJdk,用命令 java -version ，会有下面的信息：
+
+java version “1.6.0”OpenJDK Runtime Environment (
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category" target="_blank">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2019 ZhangYongBo. All Rights Reserved.
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">190k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/zhangyongbo" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:china.zhangyongbo@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://user.qzone.qq.com/785419852" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="weixin://contacts/profile/zybforwx" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-wechat"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 0;
+        var uvcountOffset = 0;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv")!=null&&document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2015, 12, 04, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+
+</body>
+</html>

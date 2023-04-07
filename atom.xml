@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://china_zyb.gitee.io/"/>
-  <updated>2023-04-07T06:03:53.033Z</updated>
+  <updated>2023-04-07T06:47:43.408Z</updated>
   <id>http://china_zyb.gitee.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>获取文件头信息进行文件类型识别验证</title>
-    <link href="http://china_zyb.gitee.io/2020/12/12/huo-qu-wen-jian-tou-xin-xi-jin-xing-wen-jian-lei-xing-shi-bie-yan-zheng/"/>
-    <id>http://china_zyb.gitee.io/2020/12/12/huo-qu-wen-jian-tou-xin-xi-jin-xing-wen-jian-lei-xing-shi-bie-yan-zheng/</id>
-    <published>2020-12-12T10:19:42.000Z</published>
-    <updated>2023-04-07T06:03:53.033Z</updated>
+    <title>Linux下LibreOffice安装</title>
+    <link href="http://china_zyb.gitee.io/2021/06/14/linux-xia-libreoffice-an-zhuang/"/>
+    <id>http://china_zyb.gitee.io/2021/06/14/linux-xia-libreoffice-an-zhuang/</id>
+    <published>2021-06-14T01:52:35.000Z</published>
+    <updated>2023-04-07T06:47:43.408Z</updated>
     
     <summary type="html">
     
@@ -29,24 +29,24 @@
       
         
         
-          &lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; java&lt;span class=&quot;token
+          &lt;h1 id=&quot;Linux下LibreOffice安装&quot;&gt;&lt;a href=&quot;#Linux下LibreOffice安装&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
     
-      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
+      <category term="Linux" scheme="http://china_zyb.gitee.io/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
-    <title>js时间处理工具</title>
-    <link href="http://china_zyb.gitee.io/2020/08/02/js-shi-jian-chu-li-gong-ju/"/>
-    <id>http://china_zyb.gitee.io/2020/08/02/js-shi-jian-chu-li-gong-ju/</id>
-    <published>2020-08-02T04:56:48.000Z</published>
-    <updated>2020-08-23T06:55:35.000Z</updated>
+    <title>Linux下字体安装</title>
+    <link href="http://china_zyb.gitee.io/2021/06/14/linux-xia-zi-ti-an-zhuang/"/>
+    <id>http://china_zyb.gitee.io/2021/06/14/linux-xia-zi-ti-an-zhuang/</id>
+    <published>2021-06-14T01:51:01.000Z</published>
+    <updated>2023-04-07T06:47:43.773Z</updated>
     
     <summary type="html">
     
@@ -54,11 +54,35 @@
       
         
         
-          &lt;pre class=&quot; language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;/**
- * 日期格式化
- * yyyy/yy 年
- * MM/M 月
- * E
+          &lt;h1 id=&quot;Linux下字体安装&quot;&gt;&lt;a href=&quot;#Linux下字体安装&quot; class=&quot;headerlink&quot; title=&quot;Linux下字体安装&quot;&gt;&lt;/a&gt;Linux下字体安装&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;安装字体管理工具&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://china_zyb.gitee.io/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>EasyUI ComboTree</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/easyui-combotree/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/easyui-combotree/</id>
+    <published>2020-08-08T23:34:10.000Z</published>
+    <updated>2023-04-07T07:06:01.751Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;EasyUI-ComboTree&quot;&gt;&lt;a href=&quot;#EasyUI-ComboTree&quot; class=&quot;headerlink&quot; title=&quot;EasyUI ComboTree&quot;&gt;&lt;/a&gt;EasyUI ComboTree&lt;/h1&gt;&lt;p&gt;&lt;img
         
       
     
@@ -68,16 +92,14 @@
       <category term="Web" scheme="http://china_zyb.gitee.io/categories/Web/"/>
     
     
-      <category term="Date" scheme="http://china_zyb.gitee.io/tags/Date/"/>
-    
   </entry>
   
   <entry>
-    <title>Java检查收取邮件</title>
-    <link href="http://china_zyb.gitee.io/2019/08/31/java-jian-cha-shou-qu-you-jian/"/>
-    <id>http://china_zyb.gitee.io/2019/08/31/java-jian-cha-shou-qu-you-jian/</id>
-    <published>2019-08-31T08:17:52.000Z</published>
-    <updated>2020-04-28T01:35:38.000Z</updated>
+    <title>EasyUI 取消选中行高亮</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/easyui-qu-xiao-xuan-zhong-xing-gao-liang/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/easyui-qu-xiao-xuan-zhong-xing-gao-liang/</id>
+    <published>2020-08-08T23:34:00.000Z</published>
+    <updated>2023-04-07T06:51:48.550Z</updated>
     
     <summary type="html">
     
@@ -85,175 +107,7 @@
       
         
         
-          &lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; org&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
-    
-    
-      <category term="JMail" scheme="http://china_zyb.gitee.io/tags/JMail/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>activiti ie下保存模型问题</title>
-    <link href="http://china_zyb.gitee.io/2019/08/31/activiti-ie-xia-bao-cun-mo-xing-wen-ti/"/>
-    <id>http://china_zyb.gitee.io/2019/08/31/activiti-ie-xia-bao-cun-mo-xing-wen-ti/</id>
-    <published>2019-08-31T08:15:13.000Z</published>
-    <updated>2019-09-01T03:25:32.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;错误：Enclosed Exception: 元素类型 “path” 必须后跟属性规范 “&amp;gt;” 或
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
-    
-    
-      <category term="Activiti" scheme="http://china_zyb.gitee.io/tags/Activiti/"/>
-    
-      <category term="转" scheme="http://china_zyb.gitee.io/tags/%E8%BD%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JAVA后台调用http接口</title>
-    <link href="http://china_zyb.gitee.io/2019/08/31/java-hou-tai-diao-yong-http-jie-kou/"/>
-    <id>http://china_zyb.gitee.io/2019/08/31/java-hou-tai-diao-yong-http-jie-kou/</id>
-    <published>2019-08-31T08:13:19.000Z</published>
-    <updated>2019-09-01T03:25:39.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; java&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
-    
-    
-      <category term="Http" scheme="http://china_zyb.gitee.io/tags/Http/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>activiti获取模型图片或部署图片</title>
-    <link href="http://china_zyb.gitee.io/2019/08/31/activiti-huo-qu-mo-xing-tu-pian-huo-bu-shu-tu-pian/"/>
-    <id>http://china_zyb.gitee.io/2019/08/31/activiti-huo-qu-mo-xing-tu-pian-huo-bu-shu-tu-pian/</id>
-    <published>2019-08-31T08:10:14.000Z</published>
-    <updated>2019-09-01T03:25:45.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;/**
- * 获取流程图片base64码
- *
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
-    
-    
-      <category term="Activiti" scheme="http://china_zyb.gitee.io/tags/Activiti/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>activiti获取流程跟踪图</title>
-    <link href="http://china_zyb.gitee.io/2019/08/31/activiti-huo-qu-liu-cheng-gen-zong-tu/"/>
-    <id>http://china_zyb.gitee.io/2019/08/31/activiti-huo-qu-liu-cheng-gen-zong-tu/</id>
-    <published>2019-08-31T06:18:53.000Z</published>
-    <updated>2019-09-01T03:25:51.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre class=&quot; language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;/**
- * 根据流程实例id，获取流程实时跟踪图片Base64码
- *
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
-    
-    
-      <category term="Activiti" scheme="http://china_zyb.gitee.io/tags/Activiti/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>activiti流程跟踪图连接线文字不显示问题</title>
-    <link href="http://china_zyb.gitee.io/2019/08/31/activiti-liu-cheng-gen-zong-tu-lian-jie-xian-wen-zi-bu-xian-shi-wen-ti/"/>
-    <id>http://china_zyb.gitee.io/2019/08/31/activiti-liu-cheng-gen-zong-tu-lian-jie-xian-wen-zi-bu-xian-shi-wen-ti/</id>
-    <published>2019-08-31T06:17:27.000Z</published>
-    <updated>2019-09-01T03:25:58.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;需要反编译流程图片处理类，新建同包同名类，复制反编译内容，添加连接线文字处理。&lt;br&gt;&lt;code&gt;activiti-image-generator-5.22.0.jar!/org/activiti/image/impl/DefaultProcessDiagramGenera
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://china_zyb.gitee.io/categories/Java/"/>
-    
-    
-      <category term="Activiti" scheme="http://china_zyb.gitee.io/tags/Activiti/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Cron表达式生成器</title>
-    <link href="http://china_zyb.gitee.io/2019/08/31/cron-biao-da-shi-sheng-cheng-qi/"/>
-    <id>http://china_zyb.gitee.io/2019/08/31/cron-biao-da-shi-sheng-cheng-qi/</id>
-    <published>2019-08-31T05:05:07.000Z</published>
-    <updated>2019-08-31T06:08:36.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本功能取自&lt;code&gt;http://cron.qqe2.com&lt;/code&gt;网站在线生成功能。因需要纯前端功能，所以去除了后台加载的&lt;strong&gt;最近5次运行时间&lt;/strong&gt;&lt;br&gt;。同时添加了cron表达式的校验功能，判断表达式的有效性。&lt;br&gt;&lt;img
+          &lt;h1 id=&quot;EasyUI-取消选中行高亮&quot;&gt;&lt;a href=&quot;#EasyUI-取消选中行高亮&quot; class=&quot;headerlink&quot; title=&quot;EasyUI 取消选中行高亮&quot;&gt;&lt;/a&gt;EasyUI 取消选中行高亮&lt;/h1&gt;&lt;p&gt;easyui
         
       
     
@@ -263,16 +117,14 @@
       <category term="Web" scheme="http://china_zyb.gitee.io/categories/Web/"/>
     
     
-      <category term="Cron" scheme="http://china_zyb.gitee.io/tags/Cron/"/>
-    
   </entry>
   
   <entry>
-    <title>关闭Mac OS系统程序崩溃报告</title>
-    <link href="http://china_zyb.gitee.io/2019/08/28/guan-bi-mac-os-xi-tong-cheng-xu-beng-kui-bao-gao/"/>
-    <id>http://china_zyb.gitee.io/2019/08/28/guan-bi-mac-os-xi-tong-cheng-xu-beng-kui-bao-gao/</id>
-    <published>2019-08-28T08:51:26.000Z</published>
-    <updated>2019-08-31T03:41:21.000Z</updated>
+    <title>Ajax加载数据加载中遮罩</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/ajax-jia-zai-shu-ju-jia-zai-zhong-zhe-zhao/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/ajax-jia-zai-shu-ju-jia-zai-zhong-zhe-zhao/</id>
+    <published>2020-08-08T23:33:44.000Z</published>
+    <updated>2023-04-07T06:51:49.342Z</updated>
     
     <summary type="html">
     
@@ -280,7 +132,107 @@
       
         
         
-          &lt;h1 id=&quot;关闭崩溃报告显示&quot;&gt;&lt;a href=&quot;#关闭崩溃报告显示&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;Ajax加载数据加载中遮罩&quot;&gt;&lt;a href=&quot;#Ajax加载数据加载中遮罩&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Web" scheme="http://china_zyb.gitee.io/categories/Web/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL重置密码，环境变量</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/mysql-chong-zhi-mi-ma-huan-jing-bian-liang/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/mysql-chong-zhi-mi-ma-huan-jing-bian-liang/</id>
+    <published>2020-08-08T23:33:04.000Z</published>
+    <updated>2023-04-07T06:44:02.073Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;MySQL重置密码，环境变量&quot;&gt;&lt;a href=&quot;#MySQL重置密码，环境变量&quot; class=&quot;headerlink&quot; title=&quot;MySQL重置密码，环境变量&quot;&gt;&lt;/a&gt;MySQL重置密码，环境变量&lt;/h1&gt;&lt;h1 id=&quot;重置密码&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="DataBase" scheme="http://china_zyb.gitee.io/categories/DataBase/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL建表执行初始化脚本</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/mysql-jian-biao-zhi-xing-chu-shi-hua-jiao-ben/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/mysql-jian-biao-zhi-xing-chu-shi-hua-jiao-ben/</id>
+    <published>2020-08-08T23:32:48.000Z</published>
+    <updated>2023-04-07T06:44:01.269Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;MySQL建表执行初始化脚本&quot;&gt;&lt;a href=&quot;#MySQL建表执行初始化脚本&quot; class=&quot;headerlink&quot; title=&quot;MySQL建表执行初始化脚本&quot;&gt;&lt;/a&gt;MySQL建表执行初始化脚本&lt;/h1&gt;&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="DataBase" scheme="http://china_zyb.gitee.io/categories/DataBase/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>同表、同字段、3段查询</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/tong-biao-tong-zi-duan-3-duan-cha-xun/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/tong-biao-tong-zi-duan-3-duan-cha-xun/</id>
+    <published>2020-08-08T23:30:18.000Z</published>
+    <updated>2023-04-07T07:06:01.730Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;同表、同字段、3段查询&quot;&gt;&lt;a href=&quot;#同表、同字段、3段查询&quot; class=&quot;headerlink&quot; title=&quot;同表、同字段、3段查询&quot;&gt;&lt;/a&gt;同表、同字段、3段查询&lt;/h1&gt;&lt;pre class=&quot; language-sql&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+      <category term="DataBase" scheme="http://china_zyb.gitee.io/categories/DataBase/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cornerstone 3 添加外部diff工具</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/cornerstone-3-tian-jia-wai-bu-diff-gong-ju/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/cornerstone-3-tian-jia-wai-bu-diff-gong-ju/</id>
+    <published>2020-08-08T23:30:04.000Z</published>
+    <updated>2023-04-07T07:06:01.628Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Cornerstone-3-添加外部diff工具&quot;&gt;&lt;a href=&quot;#Cornerstone-3-添加外部diff工具&quot; class=&quot;headerlink&quot; title=&quot;Cornerstone 3 添加外部diff工具&quot;&gt;&lt;/a&gt;Cornerstone 3
         
       
     
@@ -290,16 +242,14 @@
       <category term="Other" scheme="http://china_zyb.gitee.io/categories/Other/"/>
     
     
-      <category term="Mac" scheme="http://china_zyb.gitee.io/tags/Mac/"/>
-    
   </entry>
   
   <entry>
-    <title>高效用Google</title>
-    <link href="http://china_zyb.gitee.io/2019/08/28/gao-xiao-yong-google/"/>
-    <id>http://china_zyb.gitee.io/2019/08/28/gao-xiao-yong-google/</id>
-    <published>2019-08-28T07:13:07.000Z</published>
-    <updated>2019-08-31T09:12:54.000Z</updated>
+    <title>Cornerstone 简易教程</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/cornerstone-jian-yi-jiao-cheng/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/cornerstone-jian-yi-jiao-cheng/</id>
+    <published>2020-08-08T23:30:04.000Z</published>
+    <updated>2023-04-07T07:06:01.865Z</updated>
     
     <summary type="html">
     
@@ -307,7 +257,57 @@
       
         
         
-          &lt;p&gt;如果票选近二十年最伟大的发明，我相信搜索引擎肯定会占据一个不容小觑的位置，它不单是一项发明，更是一项成就，最大程度消灭了信息的不平等。既然人人都可以接触到海量的信息，那么衡量信息财富多寡就只剩下技巧这惟一的标准了：&lt;strong&gt;善用搜索引擎的都是信息时代的富翁，不懂搜索引
+          &lt;h1 id=&quot;Cornerstone-简易教程&quot;&gt;&lt;a href=&quot;#Cornerstone-简易教程&quot; class=&quot;headerlink&quot; title=&quot;Cornerstone 简易教程&quot;&gt;&lt;/a&gt;Cornerstone 简易教程&lt;/h1&gt;&lt;h1 id=&quot;简单使用&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SvnGit" scheme="http://china_zyb.gitee.io/categories/SvnGit/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Eclipse 配置Maven web项目</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/eclipse-pei-zhi-maven-web-xiang-mu/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/eclipse-pei-zhi-maven-web-xiang-mu/</id>
+    <published>2020-08-08T23:30:04.000Z</published>
+    <updated>2023-04-07T07:06:01.846Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Eclipse-配置Maven-web项目&quot;&gt;&lt;a href=&quot;#Eclipse-配置Maven-web项目&quot; class=&quot;headerlink&quot; title=&quot;Eclipse 配置Maven web项目&quot;&gt;&lt;/a&gt;Eclipse 配置Maven
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Maven" scheme="http://china_zyb.gitee.io/categories/Maven/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>IntelliJ IDEA设置</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/intellij-idea-she-zhi/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/intellij-idea-she-zhi/</id>
+    <published>2020-08-08T23:30:04.000Z</published>
+    <updated>2023-04-07T07:06:01.751Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;IntelliJ-IDEA设置&quot;&gt;&lt;a href=&quot;#IntelliJ-IDEA设置&quot; class=&quot;headerlink&quot; title=&quot;IntelliJ IDEA设置&quot;&gt;&lt;/a&gt;IntelliJ IDEA设置&lt;/h1&gt;&lt;h1
         
       
     
@@ -317,9 +317,205 @@
       <category term="Other" scheme="http://china_zyb.gitee.io/categories/Other/"/>
     
     
-      <category term="转" scheme="http://china_zyb.gitee.io/tags/%E8%BD%AC/"/>
+  </entry>
+  
+  <entry>
+    <title>Linux下Vbox中的共享文件夹配置</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/linux-xia-vbox-zhong-de-gong-xiang-wen-jian-jia-pei-zhi/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/linux-xia-vbox-zhong-de-gong-xiang-wen-jian-jia-pei-zhi/</id>
+    <published>2020-08-08T23:30:04.000Z</published>
+    <updated>2023-04-07T07:06:01.628Z</updated>
     
-      <category term="google" scheme="http://china_zyb.gitee.io/tags/google/"/>
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Linux下Vbox中的共享文件夹配置&quot;&gt;&lt;a href=&quot;#Linux下Vbox中的共享文件夹配置&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://china_zyb.gitee.io/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Mac环境下svn的使用</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/mac-huan-jing-xia-svn-de-shi-yong/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/mac-huan-jing-xia-svn-de-shi-yong/</id>
+    <published>2020-08-08T23:30:04.000Z</published>
+    <updated>2023-04-07T07:06:01.730Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Mac环境下svn的使用&quot;&gt;&lt;a href=&quot;#Mac环境下svn的使用&quot; class=&quot;headerlink&quot; title=&quot;Mac环境下svn的使用&quot;&gt;&lt;/a&gt;Mac环境下svn的使用&lt;/h1&gt;&lt;h1
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SvnGit" scheme="http://china_zyb.gitee.io/categories/SvnGit/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Maven入门</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/maven-ru-men/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/maven-ru-men/</id>
+    <published>2020-08-08T23:30:04.000Z</published>
+    <updated>2023-04-07T07:06:01.628Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Maven入门&quot;&gt;&lt;a href=&quot;#Maven入门&quot; class=&quot;headerlink&quot; title=&quot;Maven入门&quot;&gt;&lt;/a&gt;Maven入门&lt;/h1&gt;&lt;p&gt;Maven是一个采用纯Java编写的开 源项目管理工具。Maven采用了一种被称之为project
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Maven" scheme="http://china_zyb.gitee.io/categories/Maven/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SSH本地端口转发</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/ssh-ben-di-duan-kou-zhuan-fa/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/ssh-ben-di-duan-kou-zhuan-fa/</id>
+    <published>2020-08-08T23:30:04.000Z</published>
+    <updated>2023-04-07T07:06:01.770Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SSH本地端口转发&quot;&gt;&lt;a href=&quot;#SSH本地端口转发&quot; class=&quot;headerlink&quot; title=&quot;SSH本地端口转发&quot;&gt;&lt;/a&gt;SSH本地端口转发&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://china_zyb.gitee.io/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>修改svn保存的帐号密码</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/xiu-gai-svn-bao-cun-de-zhang-hao-mi-ma/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/xiu-gai-svn-bao-cun-de-zhang-hao-mi-ma/</id>
+    <published>2020-08-08T23:30:04.000Z</published>
+    <updated>2023-04-07T07:06:01.628Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;修改svn保存的帐号密码&quot;&gt;&lt;a href=&quot;#修改svn保存的帐号密码&quot; class=&quot;headerlink&quot; title=&quot;修改svn保存的帐号密码&quot;&gt;&lt;/a&gt;修改svn保存的帐号密码&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SvnGit" scheme="http://china_zyb.gitee.io/categories/SvnGit/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>用 Maven 做项目构建</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/yong-maven-zuo-xiang-mu-gou-jian/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/yong-maven-zuo-xiang-mu-gou-jian/</id>
+    <published>2020-08-08T23:30:04.000Z</published>
+    <updated>2023-04-07T07:06:01.650Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;用-Maven-做项目构建&quot;&gt;&lt;a href=&quot;#用-Maven-做项目构建&quot; class=&quot;headerlink&quot; title=&quot;用 Maven 做项目构建&quot;&gt;&lt;/a&gt;用 Maven 做项目构建&lt;/h1&gt;&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Maven" scheme="http://china_zyb.gitee.io/categories/Maven/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Apache Commons DbUtils</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/apache-commons-dbutils/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/apache-commons-dbutils/</id>
+    <published>2020-08-08T23:29:38.000Z</published>
+    <updated>2023-04-07T07:06:01.845Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Apache-Commons-DbUtils&quot;&gt;&lt;a href=&quot;#Apache-Commons-DbUtils&quot; class=&quot;headerlink&quot; title=&quot;Apache Commons DbUtils&quot;&gt;&lt;/a&gt;Apache Commons
+        
+      
+    
+    </summary>
+    
+    
+      <category term="DataBase" scheme="http://china_zyb.gitee.io/categories/DataBase/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>EasyUI form表单load表单数据加载完成后触发</title>
+    <link href="http://china_zyb.gitee.io/2020/08/09/easyui-form-biao-dan-load-biao-dan-shu-ju-jia-zai-wan-cheng-hou-hong-fa/"/>
+    <id>http://china_zyb.gitee.io/2020/08/09/easyui-form-biao-dan-load-biao-dan-shu-ju-jia-zai-wan-cheng-hou-hong-fa/</id>
+    <published>2020-08-08T23:29:38.000Z</published>
+    <updated>2023-04-07T07:08:46.201Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;EasyUI-form表单load表单数据加载完成后触发&quot;&gt;&lt;a href=&quot;#EasyUI-form表单load表单数据加载完成后触发&quot; class=&quot;headerlink&quot; title=&quot;EasyUI
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Web" scheme="http://china_zyb.gitee.io/categories/Web/"/>
+    
     
   </entry>
   

@@ -1,0 +1,1117 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="baidu-site-verification" content="code-whzqTlXqBU" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="Tomcat中server, zhangyongbo Z先生 JAVA CMS">
+    <meta name="description" content="Tomcat中server.xml配置详解Tomcat Server的结构图如下：
+
+&amp;lt;Server&gt;
+    &amp;lt;Listener /&gt;
+    &amp;lt;GlobaNamingResources&gt;
+    &amp;lt;/GlobaN">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Tomcat中server | Z先生的乱语</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+            
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?0900dd4fd11951a12b6218080955e1c8";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Z先生的乱语" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/zyb.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Z先生的乱语</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/zyb.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Z先生的乱语</div>
+        <div class="logo-desc">
+            
+            Z先生 | JAVA | CMS
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhangyongbo" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhangyongbo" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/37.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Tomcat中server
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        <span class="chip bg-color">无标签</span>
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Middleware/" class="post-category" target="_blank">
+                            Middleware
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-08-09
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    Z先生
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Tomcat中server-xml配置详解"><a href="#Tomcat中server-xml配置详解" class="headerlink" title="Tomcat中server.xml配置详解"></a>Tomcat中server.xml配置详解</h1><p>Tomcat Server的结构图如下：</p>
+<p><img src="https://raw.githubusercontent.com/zhangyongbo/pic/master/picgo/20190808143143872_18272.png" alt="该文件描述了如何启动Tomcat"></p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Server</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Listener</span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>GlobaNamingResources</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>GlobaNamingResources</span>
+    <span class="token attr-name">&lt;Service</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Connector</span> <span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Engine</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Logger</span> <span class="token punctuation">/></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Realm</span> <span class="token punctuation">/></span></span>
+               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>host</span><span class="token punctuation">></span></span>
+                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Logger</span> <span class="token punctuation">/></span></span>
+                   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Context</span> <span class="token punctuation">/></span></span>
+               <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>host</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Engine</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Service</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Server</span><span class="token punctuation">></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>元素名</th>
+<th>属性</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>server</td>
+<td>port</td>
+<td>指定一个端口，这个端口负责监听关闭tomcat的请求</td>
+</tr>
+<tr>
+<td>shutdown</td>
+<td>指定向端口发送的命令字符串</td>
+<td></td>
+</tr>
+<tr>
+<td>service</td>
+<td>name</td>
+<td>指定service的名字</td>
+</tr>
+<tr>
+<td>Connector(表示客户端和service之间的连接)</td>
+<td>port</td>
+<td>指定服务器端要创建的端口号，并在这个断口监听来自客户端的请求</td>
+</tr>
+<tr>
+<td>minProcessors</td>
+<td>服务器启动时创建的处理请求的线程数</td>
+<td></td>
+</tr>
+<tr>
+<td>maxProcessors</td>
+<td>最大可以创建的处理请求的线程数</td>
+<td></td>
+</tr>
+<tr>
+<td>enableLookups</td>
+<td>如果为true，则可以通过调用request.getRemoteHost()进行DNS查询来得到远程客户端的实际主机名，若为false则不进行DNS查询，而是返回其ip地址</td>
+<td></td>
+</tr>
+<tr>
+<td>redirectPort</td>
+<td>指定服务器正在处理http请求时收到了一个SSL传输请求后重定向的端口号</td>
+<td></td>
+</tr>
+<tr>
+<td>acceptCount</td>
+<td>指定当所有可以使用的处理请求的线程数都被使用时，可以放到处理队列中的请求数，超过这个数的请求将不予处理</td>
+<td></td>
+</tr>
+<tr>
+<td>connectionTimeout</td>
+<td>指定超时的时间数(以毫秒为单位)</td>
+<td></td>
+</tr>
+<tr>
+<td>Engine(表示指定service中的请求处理机，接收和处理来自Connector的请求)</td>
+<td>defaultHost</td>
+<td>指定缺省的处理请求的主机名，它至少与其中的一个host元素的name属性值是一样的</td>
+</tr>
+<tr>
+<td>Context(表示一个web应用程序，通常为WAR文件，关于WAR的具体信息见servlet规范)</td>
+<td>docBase</td>
+<td>应用程序的路径或者是WAR文件存放的路径</td>
+</tr>
+<tr>
+<td>path</td>
+<td>表示此web应用程序的url的前缀，这样请求的url为<a href="http://localhost:8080/path/" target="_blank" rel="noopener">http://localhost:8080/path/</a>****</td>
+<td></td>
+</tr>
+<tr>
+<td>reloadable</td>
+<td>这个属性非常重要，如果为true，则tomcat会自动检测应用程序的/WEB-INF/lib和/WEB-INF/classes目录的变化，自动装载新的应用程序，我们可以在不重起tomcat的情况下改变应用程序</td>
+<td></td>
+</tr>
+<tr>
+<td>host(表示一个虚拟主机)</td>
+<td>name</td>
+<td>指定主机名</td>
+</tr>
+<tr>
+<td>appBase</td>
+<td>应用程序基本目录，即存放应用程序的目录</td>
+<td></td>
+</tr>
+<tr>
+<td>unpackWARs</td>
+<td>如果为true，则tomcat会自动将WAR文件解压，否则不解压，直接从WAR文件中运行应用程序</td>
+<td></td>
+</tr>
+<tr>
+<td>Logger(表示日志，调试和错误信息)</td>
+<td>className</td>
+<td>指定logger使用的类名，此类必须实现org.apache.catalina.Logger接口</td>
+</tr>
+<tr>
+<td>prefix</td>
+<td>指定log文件的前缀</td>
+<td></td>
+</tr>
+<tr>
+<td>suffix</td>
+<td>指定log文件的后缀</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>如果为true，则log文件名中要加入时间，如下例:localhost_log.001-10-04.txt</td>
+<td></td>
+</tr>
+<tr>
+<td>Realm(表示存放用户名，密码及role的<a href="http://lib.csdn.net/base/14" target="_blank" rel="noopener">数据库</a>)</td>
+<td>className</td>
+<td>指定Realm使用的类名，此类必须实现org.apache.catalina.Realm接口</td>
+</tr>
+<tr>
+<td>Valve(功能与Logger差不多，其prefix和suffix属性解释和Logger中的一样)</td>
+<td>className</td>
+<td>指定Valve使用的类名，如用org.apache.catalina.valves.AccessLogValve类可以记录应用程序的访问信息</td>
+</tr>
+<tr>
+<td>directory</td>
+<td>指定log文件存放的位置</td>
+<td></td>
+</tr>
+<tr>
+<td>pattern</td>
+<td>有两个值，common方式记录远程主机名或ip地址，用户名，日期，第一行请求的字符串，HTTP响应代码，发送的字节数。combined方式比common方式记录的值更多</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="lt-Server-gt-元素"><a href="#lt-Server-gt-元素" class="headerlink" title="&lt;Server&gt;元素"></a><code>&lt;Server&gt;</code>元素</h1><p>它代表整个容器,是Tomcat实例的顶层元素.由org.apache.catalina.Server接口来定义.它包含一个<code>&lt;Service&gt;</code>元素.并且它不能做为任何元素的子元素.</p>
+<blockquote>
+<p>一个“Server”是一个提供完整的JVM的独立组件，它可以包含一个或多个“Service”实例。服务器在指定的端口上监听shutdown命令。<br>注意：一个“Server”自身不是一个“Container”（容器），因此在这里你<br> 不可以定义诸如“Valves”或者“Loggers”子组件<br> 启动Server<br> 在端口8005处等待关闭命令<br> 如果接受到”SHUTDOWN”字符串则关闭服务器</p>
+</blockquote>
+<p>测试：</p>
+<blockquote>
+<p>telnet localhost 8005<br>输入：SHUTDOWN<br>结果：关闭tomcat<br><code>&lt;Server port=&quot;8005&quot; shutdown=&quot;SHUTDOWN&quot; debug=&quot;0&quot;&gt;</code></p>
+</blockquote>
+<ol>
+<li><strong>className</strong> 指定实现org.apache.catalina.Server接口的类.默认值为org.apache.catalina.core.StandardServer</li>
+<li><strong>port</strong> 指定Tomcat监听shutdown命令端口.终止服务器运行时,必须在Tomcat服务器所在的机器上发出shutdown命令.该属性是必须的.</li>
+<li><strong>shutdown</strong> 指定终止Tomcat服务器运行时,发给Tomcat服务器的shutdown监听端口的字符串.该属性必须设置</li>
+</ol>
+<h1 id="lt-Service-gt-元素"><a href="#lt-Service-gt-元素" class="headerlink" title="&lt;Service&gt;元素"></a><code>&lt;Service&gt;</code>元素</h1><p>该元素由org.apache.catalina.Service接口定义,它包含一个<Engine>元素,以及一个或多个<Connector>,这些Connector元素共享用同一个Engine元素</p>
+<blockquote>
+<p>一个“Service”是一个或多个共用一个单独“Container”(容器)的“Connectors”组合（因此，应用程序在容器中可见）。通常，这个容器是一个“Engine”（引擎），但这不是必须的。<br>注意：一个“Service”自身不是一个容器，因此，在这个级别上你不可定义诸如“Valves”或“Loggers”子组件。<br>Tomcat的Standalone Service<br>Service是一组Connector的集合<br>它们共用一个Engine来处理所有Connector收到的请求</p>
+</blockquote>
+<p><code>&lt;Service name=&quot;Catalina&quot;&gt;</code><br><code>&lt;Service name=&quot;Apache&quot;&gt;</code><br>第一个<code>&lt;Service&gt;</code>处理所有直接由Tomcat服务器接收的web客户请求.<br>第二个<code>&lt;Service&gt;</code>处理所有由Apahce服务器转发过来的Web客户请求 .</p>
+<ol>
+<li>className 指定实现org.apahce.catalina.Service接口的类.默认为org.apahce.catalina.core.StandardService</li>
+<li>name定义Service的名字</li>
+</ol>
+<h1 id="lt-Connector-gt-元素"><a href="#lt-Connector-gt-元素" class="headerlink" title="&lt;Connector&gt;元素"></a><code>&lt;Connector&gt;</code>元素</h1><p>由Connector接口定义.<Connector>元素代表与客户程序实际交互的给件,它负责接收客户请求,以及向客户返回响应结果.</p>
+<blockquote>
+<p>一个“Connector”（连接器）代表一个请求被接收和应答所需要的端点。每个连<br>接器通过相关的“Container”（容器）处理请求。</p>
+</blockquote>
+<blockquote>
+<p>默认情况下，一个非SSL的HTTP/1.1的连接器被绑定在端口8080。你也可以通过<br>根据后面的使用说明并取消第二个连接器入口的注释，在端口8443上建立一个<br>SSL HTTP/1.1的连接器。开放SSL支持需要下面几步（参见Tomcat 5文档中怎样<br>配置SSL的说明以取得更多的详细信息）：</p>
+</blockquote>
+<ul>
+<li>如果你的JDK是1.3或1.3以前的版本，下载安装JSSE 1.0.2或以后版本，并放<br>置JAR文件到<code>$JAVA_HOME/jre/lib/ext</code>目录下。</li>
+<li>带一个“changeit”的口令值执行：<br><code>%JAVA_HOME%\bin\keytool -genkey -alias tomcat -keyalg RSA (Windows)</code><br><code>$JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA (UNIX)</code><br>来生成它自己的证书私钥。</li>
+</ul>
+<blockquote>
+<p>默认情况下，当一个web应用程序调用请求时，DNS查询是可行的。这将对性能造<br>成一些不利的影响，因此，你可以将“enableLookups”设置为“false”来关闭DNS<br>查询。当DNS查询被关闭时，request.getRemoteHost()将返回包含远程客户IP地<br>址的字符串。</p>
+</blockquote>
+<p><strong>className</strong> : 该Connector的实现类是org.apache.coyote.tomcat4.CoyoteConnector<br><strong>port</strong> : 在端口号8080处侦听来自客户browser的HTTP1.1请求.如果把8080改成80,则只要输入<a href="http://localhost/%E5%8D%B3%E5%8F%AF" target="_blank" rel="noopener">http://localhost/即可</a><br><strong>protocol</strong>:设定Http协议,默认值为HTTP/1.1<br><strong>minSpareThreads</strong>: 该Connector先创建5个线程等待客户请求，每个请求由一个线程负责<br><strong>maxSpareThread</strong>:设定在监听端口的线程的最大数目,这个值也决定了服务器可以同时响应客户请求的最大数目.默认值为200<br><strong>acceptCount</strong> : 当现有线程已经达到最大数75时，为客户请求排队.当队列中请求数超过100时，后来的请求返回Connection refused错误<br><strong>redirectport</strong> : 当客户请求是https时，把该请求转发到端口8443去<br><strong>enableLookups</strong>:如果设为true,表示支持域名解析,可以把IP地址解析为主机名.WEB应用中调用request.getRemoteHost方法返回客户机主机名.默认值为true<br><strong>connectionTimeout</strong>:定义建立客户连接超时的时间.如果为-1,表示不限制建立客户连接的时间<br><strong>allowTrace</strong>：是否允许HTTP的TRACE方法，默认为false<br><strong>emptySessionPath</strong>：如果设置为true，用户的所有路径都将设置为/，默认为false。<br><strong>enableLookups</strong>：调用request、getRemoteHost()执行DNS查询，以返回远程主机的主机名，如果设置为false，则直接返回IP地址。<br><strong>maxPostSize</strong>：指定POST方式请求的最大量，没有指定默认为2097152。<br><strong>protocol</strong>：值必须为HTTP1.1，如果使用AJP处理器，该值必须为AJP/1.3<br><strong>proxyName</strong>：如这个连接器正在一个代理配置中被使用，指定这个属性，在request.getServerName()时返回<br><strong>redirectPort</strong>：如连接器不支持SSL请求，如收到SSL请求，Catalina容器将会自动重定向指定的端口号，让其进行处理。<br><strong>scheme</strong>：设置协议的名字，在request.getScheme()时返回，SSL连接器设为”https”，默认为”http”<br><strong>secure</strong>：在SSL连接器可将其设置为true，默认为false<br><strong>URIEncoding</strong>：用于解码URL的字符编码，没有指定默认值为ISO-8859-1<br><strong>useBodyEncodingForURI</strong>：主要用于Tomcat4.1.x中，指示是否使用在contentType中指定的编码来取代URIEncoding，用于解码URI查询参数，默认为false<br><strong>xpoweredBy</strong>：为true时，Tomcat使用规范建议的报头表明支持Servlet的规范版本，默认为false<br><strong>acceptCount</strong>：当所有的可能处理的线程都正在使用时，在队列中排队请求的最大数目。当队列已满，任何接收到的请求都会被拒绝，默认值为10<br><strong>bufferSize</strong>：设由连接器创建输入流缓冲区的大小，以字节为单位。默认情况下，缓存区大的大小为2048字节<br><strong>compressableMimeType</strong>：MIME的列表，默认以逗号分隔。默认值是text/html，text/xml，text/plain<br><strong>compression</strong>：指定是否对响应的数据进行压缩。off：表示禁止压缩、on：表示允许压缩（文本将被压缩）、force：表示所有情况下都进行压缩，默认值为off<br><strong>connectionTimeout</strong>：设置连接的超时值，以毫秒为单位。默认值为60000=60秒<br><strong>disableUploadTimeOut</strong>：允许Servlet容器，正在执行使用一个较长的连接超时值，以使Servlet有较长的时间来完成它的执行，默认值为false<br><strong>maxHttpHeaderSize</strong>：HTTP请求和响应头的最大量，以字节为单位，默认值为4096字节<br><strong>maxKeepAliveRequest</strong>：服务器关闭之前，客户端发送的流水线最大数目。默认值为100<br><strong>maxSpareThreads</strong>：允许存在空闲线程的最大数目，默认值为50<br><strong>minSpareThreads</strong>：设当连接器第一次启协创建线程的数目，确保至少有这么多的空闲线程可用。默认值为4<br>port：服务端套接字监听的TCP端口号，默认值为8080（必须）<br><strong>socketBuffer</strong>：设Socket输出缓冲区的大小（以字节为单位），-1表示禁止缓冲，默认值为9000字节<br><strong>toNoDelay</strong>：为true时，可以提高性能。默认值为true<br><strong>threadPriority</strong>：设JVM中请求处理线程优先级。默认值为NORMAL-PRIORITY</p>
+<p>例：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Connector</span>
+<span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8080<span class="token punctuation">"</span></span> <span class="token attr-name">maxHttpHeaderSize</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8192<span class="token punctuation">"</span></span> <span class="token attr-name">maxThreads</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>150<span class="token punctuation">"</span></span> <span class="token attr-name">minSpareThreads</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>25<span class="token punctuation">"</span></span> <span class="token attr-name">maxSpareThreads</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>75<span class="token punctuation">"</span></span> <span class="token attr-name">enableLookups</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
+<span class="token attr-name">redirectPort</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8443<span class="token punctuation">"</span></span> <span class="token attr-name">acceptCount</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span> <span class="token attr-name">connectionTimeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>20000<span class="token punctuation">"</span></span> <span class="token attr-name">disableUploadTimeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<p>AJP连接器：<br>用于将Apache与Tomcat集成在一起，当Apache接收到动态内容请求时，通过在配置中指定的端口号将请求发送给在此端口号上监听的AJP连接器组件。<br>属性：<br>backlog：当所有可能的请求处理线程都在使用时，队列中排队的请求最大数目。默认为10，当队列已满，任何请求都将被拒绝<br>maxSpareThread：允许存在空闲线程的最大数目，默认值为50<br>maxThread：最大线程数，默认值为200<br>minSpareThreads：设当连接器第一次启动时创建线程的数目，确保至少有这么多的空闲线程可用，默认值为4<br>port：服务端套接字的TCP端口号，默认值为8089（必须）<br>topNoDelay：为true时，可以提高性能，默认值为true<br>soTimeout：超时值</p>
+<p>例：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>!—Define</span> <span class="token attr-name">an</span> <span class="token attr-name">AJP1.3</span> <span class="token attr-name">Connector</span> <span class="token attr-name">on</span> <span class="token attr-name">port</span> <span class="token attr-name">8089--</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Connector</span> <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span>”8089”</span> <span class="token attr-name">enableLookups</span><span class="token attr-value"><span class="token punctuation">=</span>”false”</span> <span class="token attr-name">redirectPort</span><span class="token attr-value"><span class="token punctuation">=</span>”8443”</span> <span class="token attr-name">protocol</span><span class="token attr-value"><span class="token punctuation">=</span>”AJP/1.3”</span> <span class="token punctuation">/></span></span>
+
+ -->
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Connector</span> <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8080<span class="token punctuation">"</span></span> <span class="token attr-name">maxThread</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span> <span class="token attr-name">minSpareThreads</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>25<span class="token punctuation">"</span></span> <span class="token attr-name">maxSpareThread</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>75<span class="token punctuation">"</span></span> <span class="token attr-name">enableLookups</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span> <span class="token attr-name">redirectPort</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8443<span class="token punctuation">"</span></span> <span class="token attr-name">acceptCount</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span> <span class="token attr-name">debug</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">connectionTimeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>20000<span class="token punctuation">"</span></span> <span class="token attr-name">disableUploadTimeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Connection</span> <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8009<span class="token punctuation">"</span></span> <span class="token attr-name">enableLookups</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span> <span class="token attr-name">redirectPort</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8443<span class="token punctuation">"</span></span> <span class="token attr-name">debug</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">protocol</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>AJP/1.3<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<p>第一个Connector元素定义了一个HTTP Connector,它通过8080端口接收HTTP请求;第二个Connector元素定义了一个JD Connector,它通过8009端口接收由其它服务器转发过来的请求.</p>
+<h1 id="lt-Engine-gt-元素"><a href="#lt-Engine-gt-元素" class="headerlink" title="&lt;Engine&gt;元素"></a><code>&lt;Engine&gt;</code>元素</h1><p>每个Service元素只能有一个Engine元素.处理在同一个<Service>中所有<Connector>元素接收到的客户请求.由org.apahce.catalina.Engine接口定义.</p>
+<blockquote>
+<p>一个“Engine”（引擎）代表处理每个请求的入口点（在Catalina内）。这个Tomcat的标准独立引擎实现分析包含在请求中的HTTP头信息，并将请求传送到适当的主机或虚拟主机上。<br>Engine用来处理Connector收到的Http请求,它将匹配请求和自己的虚拟主机，并把请求转交给对应的Host来处理默认虚拟主机是localhost</p>
+</blockquote>
+<p><code>&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;localhost&quot; debug=&quot;0&quot;&gt;</code></p>
+<ol>
+<li>className指定实现Engine接口的类,默认值为StandardEngine</li>
+<li>defaultHost指定处理客户的默认主机名,在<code>&lt;Engine&gt;</code>中的<code>&lt;Host&gt;</code>子元素中必须定义这一主机</li>
+<li>name定义Engine的名字</li>
+</ol>
+<p>在<code>&lt;Engine&gt;</code>可以包含如下元素<code>&lt;Logger&gt;, &lt;Realm&gt;, &lt;Value&gt;, &lt;Host&gt;</code></p>
+<h1 id="lt-Host-gt-元素"><a href="#lt-Host-gt-元素" class="headerlink" title="&lt;Host&gt;元素"></a><code>&lt;Host&gt;</code>元素</h1><p>它由Host接口定义.一个Engine元素可以包含多个<code>&lt;Host&gt;</code>元素.每个<code>&lt;Host&gt;</code>的元素定义了一个虚拟主机.它包含了一个或多个Web应用.</p>
+<blockquote>
+<p>定义默认的虚拟主机。注意：XML模式确认将不能与Xerces 2.2同工作。<br>虚拟主机localhost<br><strong>appBase</strong> : 指 定虚拟主机的目录,可以指定绝对目录,也可以指定相对于<code>&lt;CATALINA_HOME&gt;</code>的相对目录.如果没有此项,默认 为<code>&lt;CATALINA_HOME&gt;/webapps</code>. 它将匹配请求和自己的Context的路径，并把请求转交给对应的Context来处 理<br><strong>autoDeploy</strong>:如果此项设为true,表示Tomcat服务处于运行状态时,能够监测appBase下的文件,如果有新有web应用加入进来,会自运发布这个WEB应用<br><strong>unpackWARs</strong>:如果此项设置为true,表示把WEB应用的WAR文件先展开为开放目录结构后再运行.如果设为false将直接运行为WAR文件<br><strong>alias</strong>:指定主机别名,可以指定多个别名<br><strong>deployOnStartup</strong>:如果此项设为true,表示Tomcat服务器启动时会自动发布appBase目录下所有的Web应用.如果Web应用 中的server.xml没有相应的<code>&lt;Context&gt;</code>元素,将采用Tomcat默认的Context</p>
+</blockquote>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Host</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>localhost<span class="token punctuation">"</span></span> <span class="token attr-name">debug</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">appBase</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>webapps<span class="token punctuation">"</span></span> <span class="token attr-name">unpackWARs</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">autoDeploy</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>在<code>&lt;Host&gt;</code>元素中可以包含如下子元素<br><code>&lt;Logger&gt;, &lt;Realm&gt;, &lt;Value&gt;, &lt;Context&gt;</code></p>
+<h1 id="lt-Context-gt-元素"><a href="#lt-Context-gt-元素" class="headerlink" title="&lt;Context&gt;元素"></a><code>&lt;Context&gt;</code>元素</h1><p>它由Context接口定义.是使用最频繁的元素.每个<code>&lt;Context&gt;</code>元素代表了运行在虚拟主机上的单个Web应用.一个<code>&lt;Host&gt;</code>可以包含多个<code>&lt;Context&gt;</code>元素.每个web应用有唯一<br>的一个相对应的Context代表web应用自身.servlet容器为第一个web应用创建一个</p>
+<blockquote>
+<p>Context，对应于一个Web App<br><strong>path</strong> : 该Context的路径名是””，故该Context是该Host的默认Context<br><strong>docBase</strong> : 该Context的根目录是webapps/mycontext/<br><strong>reloadable</strong>:如果这个属性设为true, Tomcat服务器在运行状态下会监视在WEB-INF/classes和Web-INF/lib目录CLASS文件的改运.如果监视到有class文件 被更新,服务器自重新加载Web应用<br><strong>useNaming</strong>:指定是否支持JNDI,默认值为了true<br>cookies指定是否通过Cookies来支持Session,默认值为true</p>
+</blockquote>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Context</span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">docBase</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mycontext<span class="token punctuation">"</span></span> <span class="token attr-name">debug</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+</code></pre>
+<p>Tomcat Server处理一个http请求的过程</p>
+<p>假设来自客户的请求为：<a href="http://localhost:8080/wsota/wsota_index.jsp" target="_blank" rel="noopener">http://localhost:8080/wsota/wsota_index.jsp</a></p>
+<ol>
+<li>请求被发送到本机端口8080，被在那里侦听的Coyote HTTP/1.1 Connector获得</li>
+<li>Connector把该请求交给它所在的Service的Engine来处理，并等待来自Engine的回应</li>
+<li>Engine获得请求localhost/wsota/wsota_index.jsp，匹配它所拥有的所有虚拟主机Host</li>
+<li>Engine匹配到名为localhost的Host（即使匹配不到也把请求交给该Host处理，因为该Host被定义为该Engine的默认主机）</li>
+<li>localhost Host获得请求/wsota/wsota_index.jsp，匹配它所拥有的所有Context</li>
+<li>Host匹配到路径为/wsota的Context（如果匹配不到就把该请求交给路径名为””的Context去处理）</li>
+<li>path=”/wsota”的Context获得请求/wsota_index.jsp，在它的mapping table中寻找对应的servlet</li>
+<li>Context匹配到URL PATTERN为*.jsp的servlet，对应于JspServlet类</li>
+<li>构造HttpServletRequest对象和HttpServletResponse对象，作为参数调用JspServlet的doGet或doPost方法</li>
+<li>Context把执行完了之后的HttpServletResponse对象返回给Host</li>
+<li>Host把HttpServletResponse对象返回给Engine</li>
+<li>Engine把HttpServletResponse对象返回给Connector</li>
+<li>Connector把HttpServletResponse对象返回给客户browser</li>
+</ol>
+
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script src="/libs/others/md5.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '968642bc6faa447e79d0',
+        clientSecret: 'cbbda9af6a5ab1a49a053eab50aa6be46a418da4',
+        repo: 'gitalk',
+        owner: 'zhangyongbo',
+        admin: "zhangyongbo",
+        id: md5('2020/08/09/tomcat-zhong-server.xml-pei-zhi-xiang-jie/'),
+        createIssueManually:false,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/08/09/tomcat-weblogic-yun-xing-she-zhi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Tomcat、WebLogic运行设置">
+                        
+                        <span class="card-title">Tomcat、WebLogic运行设置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Tomcat、WebLogic运行设置tomcat内存调整，在catalina.sh添加
+LOGGING_MANAGER=&quot;-Djava.util.logging.manager=org.apache.juli.ClassLoad
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Middleware/" class="post-category" target="_blank">
+                                    Middleware
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/08/09/ireport-shi-yong-zong-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/78.jpg" class="responsive-img" alt="iReport 使用总结">
+                        
+                        <span class="card-title">iReport 使用总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            iReport 使用总结大小写问题
+parameter中如果小写，引用也小写
+$F{},一般都大写
+子报表中引用父报表中查询出来的值时，只需要小写即可，即在子报表的parameter中只需要小写
+
+获取系统当前时间
+选择 TextField
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Other/" class="post-category" target="_blank">
+                                    Other
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2019 ZhangYongBo. All Rights Reserved.
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">190k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/zhangyongbo" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:china.zhangyongbo@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://user.qzone.qq.com/785419852" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="weixin://contacts/profile/zybforwx" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-wechat"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 0;
+        var uvcountOffset = 0;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv")!=null&&document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2015, 12, 04, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+
+</body>
+</html>

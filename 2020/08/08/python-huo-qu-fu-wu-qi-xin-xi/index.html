@@ -1,0 +1,1510 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta name="baidu-site-verification" content="code-whzqTlXqBU" />
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python获取服务器信息, zhangyongbo Z先生 JAVA CMS">
+    <meta name="description" content="Python获取服务器信息采用python的psutil包进行服务器性能信息获取；可获取：
+
+CPU信息
+内存信息
+服务器当前登录用户
+网络信息
+磁盘信息
+运行进程信息
+系统启动时间
+系统名称
+系统版本
+计算机类型
+处理器类型
+
+统计结果以">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Python获取服务器信息 | Z先生的乱语</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+            
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?0900dd4fd11951a12b6218080955e1c8";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Z先生的乱语" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/zyb.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Z先生的乱语</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/zyb.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Z先生的乱语</div>
+        <div class="logo-desc">
+            
+            Z先生 | JAVA | CMS
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zhangyongbo" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zhangyongbo" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/73.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Python获取服务器信息
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        <span class="chip bg-color">无标签</span>
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Python/" class="post-category" target="_blank">
+                            Python
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-08-08
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    Z先生
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    23 分
+                </div>
+                
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Python获取服务器信息"><a href="#Python获取服务器信息" class="headerlink" title="Python获取服务器信息"></a>Python获取服务器信息</h1><p>采用python的psutil包进行服务器性能信息获取；<br>可获取：</p>
+<ul>
+<li>CPU信息</li>
+<li>内存信息</li>
+<li>服务器当前登录用户</li>
+<li>网络信息</li>
+<li>磁盘信息</li>
+<li>运行进程信息</li>
+<li>系统启动时间</li>
+<li>系统名称</li>
+<li>系统版本</li>
+<li>计算机类型</li>
+<li>处理器类型</li>
+</ul>
+<p>统计结果以json格式保存在redis中，以计算机名称-ip为key，每个计算机的数据存储为hash类型，hash内以时间戳为key（YYYYmmddHHMMSS）</p>
+<p>统计频率可以使用Linux自带的crontab进行脚本定时执行。</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># !/usr/bin/env python</span>
+<span class="token comment" spellcheck="true"># -*-coding:utf-8 -*-</span>
+<span class="token keyword">import</span> platform
+<span class="token keyword">from</span> dateutil<span class="token punctuation">.</span>relativedelta <span class="token keyword">import</span> relativedelta
+<span class="token keyword">import</span> socket
+<span class="token keyword">import</span> redis
+<span class="token keyword">import</span> psutil
+<span class="token keyword">import</span> datetime
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> json
+<span class="token comment" spellcheck="true"># 本脚本需要安装psutil、redis、python-dateutil依赖</span>
+<span class="token comment" spellcheck="true"># pip install j</span>
+<span class="token comment" spellcheck="true"># pip install redis</span>
+<span class="token comment" spellcheck="true"># pip install python-dateutil</span>
+<span class="token comment" spellcheck="true"># 获取系统信息组件文档 https://psutil.readthedocs.io/en/latest/</span>
+<span class="token comment" spellcheck="true"># 定时获取数据，可以通过crontab执行脚本，设置crontab开机启动</span>
+<span class="token comment" spellcheck="true"># 设置计算机名：hostnamectl set-hostname 计算机名称</span>
+<span class="token comment" spellcheck="true"># 数据存储在redis中以计算机名称-ip为key，每个计算机的数据存储为hash类型，hash内以时间戳为key（YYYYmmddHHMMSS）</span>
+r <span class="token operator">=</span> redis<span class="token punctuation">.</span>Redis<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">6379</span><span class="token punctuation">,</span> password<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> db<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># r = redis.Redis(host='172.17.8.122', port=6379, password='', db=0)</span>
+
+<span class="token comment" spellcheck="true"># 采集数据封装</span>
+result <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true"># 获取ip</span>
+<span class="token keyword">def</span> <span class="token function">get_host_ip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        s <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_DGRAM<span class="token punctuation">)</span>
+        s<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'10.0.0.1'</span><span class="token punctuation">,</span> <span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        ip <span class="token operator">=</span> s<span class="token punctuation">.</span>getsockname<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword">finally</span><span class="token punctuation">:</span>
+        s<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> ip
+
+<span class="token comment" spellcheck="true"># statisticalTime:统计时间</span>
+<span class="token comment" spellcheck="true"># sysStartTime:系统启动时间</span>
+<span class="token comment" spellcheck="true"># platform:操作系统及版本信息</span>
+<span class="token comment" spellcheck="true"># version:获取系统版本号</span>
+<span class="token comment" spellcheck="true"># system:获取系统名称（Windows、Linux、FreeBSD等）</span>
+<span class="token comment" spellcheck="true"># architecture:获取操作系统可执行程序的结构，，(’32bit’, ‘WindowsPE’)</span>
+<span class="token comment" spellcheck="true"># machine:计算机类型</span>
+<span class="token comment" spellcheck="true"># node:计算机名称</span>
+<span class="token comment" spellcheck="true"># processor:处理器类型</span>
+<span class="token comment" spellcheck="true"># print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))</span>
+<span class="token comment" spellcheck="true"># time.strftime('%Y-%m-%d-%H:%M:%S', time.localtime(time.time()))</span>
+result<span class="token punctuation">[</span><span class="token string">"statisticalTime"</span><span class="token punctuation">]</span> <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">'%Y-%m-%d %H:%M:%S'</span><span class="token punctuation">)</span>
+result<span class="token punctuation">[</span><span class="token string">"sysStartTime"</span><span class="token punctuation">]</span> <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>fromtimestamp<span class="token punctuation">(</span>psutil<span class="token punctuation">.</span>boot_time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d %H:%M:%S"</span><span class="token punctuation">)</span>
+result<span class="token punctuation">[</span><span class="token string">"platform"</span><span class="token punctuation">]</span> <span class="token operator">=</span> platform<span class="token punctuation">.</span>platform<span class="token punctuation">(</span><span class="token punctuation">)</span>
+result<span class="token punctuation">[</span><span class="token string">"version"</span><span class="token punctuation">]</span> <span class="token operator">=</span> platform<span class="token punctuation">.</span>version<span class="token punctuation">(</span><span class="token punctuation">)</span>
+result<span class="token punctuation">[</span><span class="token string">"system"</span><span class="token punctuation">]</span> <span class="token operator">=</span> platform<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token punctuation">)</span>
+result<span class="token punctuation">[</span><span class="token string">"architecture"</span><span class="token punctuation">]</span> <span class="token operator">=</span> platform<span class="token punctuation">.</span>architecture<span class="token punctuation">(</span><span class="token punctuation">)</span>
+result<span class="token punctuation">[</span><span class="token string">"machine"</span><span class="token punctuation">]</span> <span class="token operator">=</span> platform<span class="token punctuation">.</span>machine<span class="token punctuation">(</span><span class="token punctuation">)</span>
+result<span class="token punctuation">[</span><span class="token string">"node"</span><span class="token punctuation">]</span> <span class="token operator">=</span> platform<span class="token punctuation">.</span>node<span class="token punctuation">(</span><span class="token punctuation">)</span>
+result<span class="token punctuation">[</span><span class="token string">"processor"</span><span class="token punctuation">]</span> <span class="token operator">=</span> platform<span class="token punctuation">.</span>processor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 查看cpu的信息</span>
+<span class="token comment" spellcheck="true"># CPU时间为秒数</span>
+<span class="token comment" spellcheck="true"># 所有逻辑CPU信息</span>
+<span class="token comment" spellcheck="true"># 以命名元组的形式返回系统CPU时间。每个属性表示CPU在给定模式下花费的秒数。可用性随平台的不同而不同:</span>
+<span class="token comment" spellcheck="true"># physics:物理cpu个数</span>
+<span class="token comment" spellcheck="true"># logic:逻辑cpu个数</span>
+<span class="token comment" spellcheck="true"># percent:cpu总利用率</span>
+<span class="token comment" spellcheck="true"># logicPercent:逻辑cpu利用率</span>
+<span class="token comment" spellcheck="true"># user:在用户模式下执行普通进程所花费的时间；在Linux上，这还包括访客时间</span>
+<span class="token comment" spellcheck="true"># system:在内核模式下执行的进程所花费的时间</span>
+<span class="token comment" spellcheck="true"># idle: 无所事事的时间</span>
+<span class="token comment" spellcheck="true"># nice(UNIX): niced(优先级)进程在用户模式下执行所花费的时间;在Linux上，这也包括了guest_nice时间</span>
+<span class="token comment" spellcheck="true"># iowait(Linux): 等待I/O完成所花费的时间</span>
+<span class="token comment" spellcheck="true"># irq(Linux, BSD): 用于服务硬件中断的时间</span>
+<span class="token comment" spellcheck="true"># softirq(Linux): 用于服务软件中断的时间</span>
+<span class="token comment" spellcheck="true"># steal(Linux 2.6.11+): 在虚拟环境中运行的其他操作系统所花费的时间</span>
+<span class="token comment" spellcheck="true"># guest(Linux 2.6.24+): 在Linux内核控制下运行来宾操作系统的虚拟CPU所花费的时间</span>
+<span class="token comment" spellcheck="true"># guest_nice (Linux 3.2.0+): 运行niced客户机(Linux内核控制下的客户机操作系统的虚拟CPU)的时间</span>
+<span class="token comment" spellcheck="true"># interrupt(Windows): 用于服务硬件中断的时间(类似于UNIX上的“irq”)</span>
+<span class="token comment" spellcheck="true"># dpc (Windows): 服务延迟程序调用(DPCs)的时间;DPCs是运行在低于标准中断优先级的中断。</span>
+cpu<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true"># 物理CPU个数</span>
+cpu<span class="token punctuation">[</span><span class="token string">"physics"</span><span class="token punctuation">]</span> <span class="token operator">=</span> psutil<span class="token punctuation">.</span>cpu_count<span class="token punctuation">(</span>logical<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 逻辑CPU个数</span>
+cpu<span class="token punctuation">[</span><span class="token string">"logic"</span><span class="token punctuation">]</span> <span class="token operator">=</span> psutil<span class="token punctuation">.</span>cpu_count<span class="token punctuation">(</span><span class="token punctuation">)</span>
+cpu<span class="token punctuation">[</span><span class="token string">"percent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> psutil<span class="token punctuation">.</span>cpu_percent<span class="token punctuation">(</span>interval<span class="token operator">=</span>None<span class="token punctuation">,</span> percpu<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+cpu<span class="token punctuation">[</span><span class="token string">"logicPercent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> psutil<span class="token punctuation">.</span>cpu_percent<span class="token punctuation">(</span>interval<span class="token operator">=</span>None<span class="token punctuation">,</span> percpu<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># cpu整体情况</span>
+physicsInfo <span class="token operator">=</span> psutil<span class="token punctuation">.</span>cpu_times<span class="token punctuation">(</span>percpu<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+physicsInfos <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+physicsInfos<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfo<span class="token punctuation">.</span>user
+physicsInfos<span class="token punctuation">[</span><span class="token string">"system"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfo<span class="token punctuation">.</span>system
+physicsInfos<span class="token punctuation">[</span><span class="token string">"idle"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfo<span class="token punctuation">.</span>idle
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>physicsInfo<span class="token punctuation">,</span> <span class="token string">"nice"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    physicsInfos<span class="token punctuation">[</span><span class="token string">"nice"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfo<span class="token punctuation">.</span>nice
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>physicsInfo<span class="token punctuation">,</span> <span class="token string">"iowait"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    physicsInfos<span class="token punctuation">[</span><span class="token string">"iowait"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfo<span class="token punctuation">.</span>iowait
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>physicsInfo<span class="token punctuation">,</span> <span class="token string">"irq"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    physicsInfos<span class="token punctuation">[</span><span class="token string">"irq"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfo<span class="token punctuation">.</span>irq
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>physicsInfo<span class="token punctuation">,</span> <span class="token string">"softirq"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    physicsInfos<span class="token punctuation">[</span><span class="token string">"softirq"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfo<span class="token punctuation">.</span>softirq
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>physicsInfo<span class="token punctuation">,</span> <span class="token string">"steal"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    physicsInfos<span class="token punctuation">[</span><span class="token string">"steal"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfo<span class="token punctuation">.</span>steal
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>physicsInfo<span class="token punctuation">,</span> <span class="token string">"guest"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    physicsInfos<span class="token punctuation">[</span><span class="token string">"guest"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfo<span class="token punctuation">.</span>guest
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>physicsInfo<span class="token punctuation">,</span> <span class="token string">"guest_nice"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    physicsInfos<span class="token punctuation">[</span><span class="token string">"guest_nice"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfo<span class="token punctuation">.</span>guest_nice
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>physicsInfo<span class="token punctuation">,</span> <span class="token string">"interrupt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    physicsInfos<span class="token punctuation">[</span><span class="token string">"interrupt"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfo<span class="token punctuation">.</span>interrupt
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>physicsInfo<span class="token punctuation">,</span> <span class="token string">"dpc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    physicsInfos<span class="token punctuation">[</span><span class="token string">"dpc"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfo<span class="token punctuation">.</span>dpc
+cpu<span class="token punctuation">[</span><span class="token string">"physicsInfo"</span><span class="token punctuation">]</span> <span class="token operator">=</span> physicsInfos
+<span class="token comment" spellcheck="true"># 各个逻辑cpu情况</span>
+logicInfo <span class="token operator">=</span> psutil<span class="token punctuation">.</span>cpu_times<span class="token punctuation">(</span>percpu<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+logicInfoList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>logicInfo<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    logicInfos<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    logicInfos<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>user
+    logicInfos<span class="token punctuation">[</span><span class="token string">"system"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>system
+    logicInfos<span class="token punctuation">[</span><span class="token string">"idle"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>idle
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"nice"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        logicInfos<span class="token punctuation">[</span><span class="token string">"nice"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>nice
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"iowait"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        logicInfos<span class="token punctuation">[</span><span class="token string">"iowait"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>iowait
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"irq"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        logicInfos<span class="token punctuation">[</span><span class="token string">"irq"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>irq
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"softirq"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        logicInfos<span class="token punctuation">[</span><span class="token string">"softirq"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>softirq
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"steal"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        logicInfos<span class="token punctuation">[</span><span class="token string">"steal"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>steal
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"guest"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        logicInfos<span class="token punctuation">[</span><span class="token string">"guest"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>guest
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"guest_nice"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        logicInfos<span class="token punctuation">[</span><span class="token string">"guest_nice"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>guest_nice
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"interrupt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        logicInfos<span class="token punctuation">[</span><span class="token string">"interrupt"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>interrupt
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"dpc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        logicInfos<span class="token punctuation">[</span><span class="token string">"dpc"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>dpc
+    logicInfoList<span class="token punctuation">.</span>append<span class="token punctuation">(</span>logicInfos<span class="token punctuation">)</span>
+cpu<span class="token punctuation">[</span><span class="token string">"logicInfo"</span><span class="token punctuation">]</span> <span class="token operator">=</span> logicInfoList
+result<span class="token punctuation">[</span><span class="token string">"cpu"</span><span class="token punctuation">]</span><span class="token operator">=</span>cpu
+<span class="token comment" spellcheck="true"># 查看内存信息</span>
+<span class="token comment" spellcheck="true"># 以元组信息返回系统内存使用情况，单位为字节。</span>
+<span class="token comment" spellcheck="true"># total: 总的物理内存</span>
+<span class="token comment" spellcheck="true"># available：不需要系统进入交换分区，可以立即分给线程的内存，这个值代表了系统可使用的内存情况</span>
+<span class="token comment" spellcheck="true"># percent: 系统内存使用率，percent = (total-available)/total*100</span>
+<span class="token comment" spellcheck="true"># used: 已使用的内存，注意：total- free不一定等于used.</span>
+<span class="token comment" spellcheck="true"># free: 已准备好，但是还一点都没被使用的内存,注意：total- used不一定等于free</span>
+<span class="token comment" spellcheck="true"># active (UNIX):当前正在使用或最近使用过的内存，因此它位于RAM中。</span>
+<span class="token comment" spellcheck="true"># inactive (UNIX):标记为未使用的内存。</span>
+<span class="token comment" spellcheck="true"># buffers (Linux, BSD):缓存文件系统元数据之类的东西。</span>
+<span class="token comment" spellcheck="true"># cached (Linux, BSD):缓存各种东西。</span>
+<span class="token comment" spellcheck="true"># shared (Linux, BSD):可以由多个进程同时访问的内存。</span>
+<span class="token comment" spellcheck="true"># slab (Linux):内核数据结构缓存。</span>
+<span class="token comment" spellcheck="true"># wired (BSD, macOS):标记为始终保留在RAM中的内存。它永远不会移动到磁盘。</span>
+mem <span class="token operator">=</span> psutil<span class="token punctuation">.</span>virtual_memory<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 以元组信息返回swap系统内存使用情况，单位为字节。</span>
+memSwap <span class="token operator">=</span> psutil<span class="token punctuation">.</span>swap_memory<span class="token punctuation">(</span><span class="token punctuation">)</span>
+memory<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+memory<span class="token punctuation">[</span><span class="token string">"total"</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">.</span>total
+memory<span class="token punctuation">[</span><span class="token string">"available"</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">.</span>available
+memory<span class="token punctuation">[</span><span class="token string">"percent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">.</span>percent
+memory<span class="token punctuation">[</span><span class="token string">"used"</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">.</span>used
+memory<span class="token punctuation">[</span><span class="token string">"free"</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">.</span>free
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>mem<span class="token punctuation">,</span> <span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    memory<span class="token punctuation">[</span><span class="token string">"active"</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">.</span>active
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>mem<span class="token punctuation">,</span> <span class="token string">"inactive"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    memory<span class="token punctuation">[</span><span class="token string">"inactive"</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">.</span>inactive
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>mem<span class="token punctuation">,</span> <span class="token string">"buffers"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    memory<span class="token punctuation">[</span><span class="token string">"buffers"</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">.</span>buffers
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>mem<span class="token punctuation">,</span> <span class="token string">"cached"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    memory<span class="token punctuation">[</span><span class="token string">"cached"</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">.</span>cached
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>mem<span class="token punctuation">,</span> <span class="token string">"shared"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    memory<span class="token punctuation">[</span><span class="token string">"shared"</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">.</span>shared
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>mem<span class="token punctuation">,</span> <span class="token string">"slab"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    memory<span class="token punctuation">[</span><span class="token string">"slab"</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">.</span>slab
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>mem<span class="token punctuation">,</span> <span class="token string">"wired"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    memory<span class="token punctuation">[</span><span class="token string">"wired"</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">.</span>wired
+<span class="token comment" spellcheck="true"># total: 总交换内存（以字节为单位）</span>
+<span class="token comment" spellcheck="true"># used: 使用的交换内存（以字节为单位）</span>
+<span class="token comment" spellcheck="true"># free: 可用字节交换内存</span>
+<span class="token comment" spellcheck="true"># percent: 使用率计算为 (total - available) / total * 100</span>
+<span class="token comment" spellcheck="true"># sin: 系统已从磁盘交换的字节数（累积）</span>
+<span class="token comment" spellcheck="true"># sout: 系统已从磁盘换出的字节数（累积）</span>
+memory<span class="token punctuation">[</span><span class="token string">"swap_total"</span><span class="token punctuation">]</span> <span class="token operator">=</span> memSwap<span class="token punctuation">.</span>total
+memory<span class="token punctuation">[</span><span class="token string">"swap_percent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> memSwap<span class="token punctuation">.</span>percent
+memory<span class="token punctuation">[</span><span class="token string">"swap_used"</span><span class="token punctuation">]</span> <span class="token operator">=</span> memSwap<span class="token punctuation">.</span>used
+memory<span class="token punctuation">[</span><span class="token string">"swap_free"</span><span class="token punctuation">]</span> <span class="token operator">=</span> memSwap<span class="token punctuation">.</span>free
+memory<span class="token punctuation">[</span><span class="token string">"swap_sin"</span><span class="token punctuation">]</span> <span class="token operator">=</span> memSwap<span class="token punctuation">.</span>sin
+memory<span class="token punctuation">[</span><span class="token string">"swap_sout"</span><span class="token punctuation">]</span> <span class="token operator">=</span> memSwap<span class="token punctuation">.</span>sout
+result<span class="token punctuation">[</span><span class="token string">"memory"</span><span class="token punctuation">]</span> <span class="token operator">=</span> memory
+<span class="token comment" spellcheck="true"># 系统用户,将当前连接到系统上的用户作为命名元组的列表返回，包括以下字段：</span>
+<span class="token comment" spellcheck="true"># name: 用户名。</span>
+<span class="token comment" spellcheck="true"># terminal: 与用户关联的tty或伪tty（如果有），否则为None。</span>
+<span class="token comment" spellcheck="true"># host: 与条目关联的主机名（如果有）。</span>
+<span class="token comment" spellcheck="true"># started: 创建时间，以浮点数为单位，以自纪元以​​来的秒数表示。</span>
+<span class="token comment" spellcheck="true"># pid: 登录过程的PID（如sshd，tmux，gdm-session-worker等）。在Windows和OpenBSD上，始终将其设置为None。</span>
+users<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># 返回登陆系统的用户数</span>
+user <span class="token operator">=</span> psutil<span class="token punctuation">.</span>users<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    isuser<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    isuser<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token operator">=</span>user<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name
+    isuser<span class="token punctuation">[</span><span class="token string">"terminal"</span><span class="token punctuation">]</span> <span class="token operator">=</span> user<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>terminal
+    isuser<span class="token punctuation">[</span><span class="token string">"host"</span><span class="token punctuation">]</span> <span class="token operator">=</span> user<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>host
+    isuser<span class="token punctuation">[</span><span class="token string">"started"</span><span class="token punctuation">]</span> <span class="token operator">=</span> user<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>started
+    isuser<span class="token punctuation">[</span><span class="token string">"pid"</span><span class="token punctuation">]</span> <span class="token operator">=</span> user<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>pid
+    users<span class="token punctuation">.</span>append<span class="token punctuation">(</span>isuser<span class="token punctuation">)</span>
+result<span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">]</span> <span class="token operator">=</span> users
+<span class="token comment" spellcheck="true"># 网卡，系统网络使用情况</span>
+<span class="token comment" spellcheck="true"># bytes_sent: 发送的字节数</span>
+<span class="token comment" spellcheck="true"># bytes_recv: 收到的字节数</span>
+<span class="token comment" spellcheck="true"># packets_sent: 发送的包数</span>
+<span class="token comment" spellcheck="true"># packets_recv: 收到的包数</span>
+<span class="token comment" spellcheck="true"># errin: 接收时的错误总数</span>
+<span class="token comment" spellcheck="true"># errout: 发送时的错误总数</span>
+<span class="token comment" spellcheck="true"># dropin: 被丢弃的入站数据包总数</span>
+<span class="token comment" spellcheck="true"># dropout: 丢弃的传出数据包总数（在macOS和BSD上始终为0）</span>
+netInfoAll <span class="token operator">=</span> psutil<span class="token punctuation">.</span>net_io_counters<span class="token punctuation">(</span>pernic<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> nowrap<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+netA<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+netA<span class="token punctuation">[</span><span class="token string">"bytes_sent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> netInfoAll<span class="token punctuation">.</span>bytes_sent
+netA<span class="token punctuation">[</span><span class="token string">"bytes_recv"</span><span class="token punctuation">]</span> <span class="token operator">=</span> netInfoAll<span class="token punctuation">.</span>bytes_recv
+netA<span class="token punctuation">[</span><span class="token string">"packets_sent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> netInfoAll<span class="token punctuation">.</span>packets_sent
+netA<span class="token punctuation">[</span><span class="token string">"packets_recv"</span><span class="token punctuation">]</span> <span class="token operator">=</span> netInfoAll<span class="token punctuation">.</span>packets_recv
+netA<span class="token punctuation">[</span><span class="token string">"errin"</span><span class="token punctuation">]</span> <span class="token operator">=</span> netInfoAll<span class="token punctuation">.</span>errin
+netA<span class="token punctuation">[</span><span class="token string">"errout"</span><span class="token punctuation">]</span> <span class="token operator">=</span> netInfoAll<span class="token punctuation">.</span>errout
+netA<span class="token punctuation">[</span><span class="token string">"dropin"</span><span class="token punctuation">]</span> <span class="token operator">=</span> netInfoAll<span class="token punctuation">.</span>dropin
+netA<span class="token punctuation">[</span><span class="token string">"dropout"</span><span class="token punctuation">]</span> <span class="token operator">=</span> netInfoAll<span class="token punctuation">.</span>dropout
+result<span class="token punctuation">[</span><span class="token string">"netInfoAll"</span><span class="token punctuation">]</span> <span class="token operator">=</span> netA
+<span class="token comment" spellcheck="true"># print(netA)</span>
+netInfo <span class="token operator">=</span> psutil<span class="token punctuation">.</span>net_io_counters<span class="token punctuation">(</span>pernic<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+nets<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> v<span class="token punctuation">,</span> k <span class="token keyword">in</span> netInfo<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    net<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    net<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token operator">=</span>v
+    netV<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    netV<span class="token punctuation">[</span><span class="token string">"bytes_sent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>bytes_sent
+    netV<span class="token punctuation">[</span><span class="token string">"bytes_recv"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>bytes_recv
+    netV<span class="token punctuation">[</span><span class="token string">"packets_sent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>packets_sent
+    netV<span class="token punctuation">[</span><span class="token string">"packets_recv"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>packets_recv
+    netV<span class="token punctuation">[</span><span class="token string">"errin"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>errin
+    netV<span class="token punctuation">[</span><span class="token string">"errout"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>errout
+    netV<span class="token punctuation">[</span><span class="token string">"dropin"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>dropin
+    netV<span class="token punctuation">[</span><span class="token string">"dropout"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>dropout
+    net<span class="token punctuation">[</span><span class="token string">"info"</span><span class="token punctuation">]</span> <span class="token operator">=</span> netV
+    nets<span class="token punctuation">.</span>append<span class="token punctuation">(</span>net<span class="token punctuation">)</span>
+result<span class="token punctuation">[</span><span class="token string">"netInfo"</span><span class="token punctuation">]</span> <span class="token operator">=</span> nets
+<span class="token comment" spellcheck="true"># 网卡状态</span>
+<span class="token comment" spellcheck="true"># isup: 一个布尔值，指示NIC是否已启动并正在运行。</span>
+<span class="token comment" spellcheck="true"># duplex: 双工通信类型；可以是 NIC_DUPLEX_FULL, NIC_DUPLEX_HALF , NIC_DUPLEX_UNKNOWN.</span>
+<span class="token comment" spellcheck="true"># speed: NIC速度（以兆位（MB）表示），如果无法确定（例如“ localhost”），则会将其设置为0。</span>
+<span class="token comment" spellcheck="true"># mtu: NIC的最大传输单位，以字节为单位。</span>
+netStat<span class="token operator">=</span>psutil<span class="token punctuation">.</span>net_if_stats<span class="token punctuation">(</span><span class="token punctuation">)</span>
+netStats <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> v<span class="token punctuation">,</span> k <span class="token keyword">in</span> netStat<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    net <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    net<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span> <span class="token operator">=</span> v
+    netV <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    netV<span class="token punctuation">[</span><span class="token string">"isup"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>isup
+    netV<span class="token punctuation">[</span><span class="token string">"duplex"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>duplex
+    netV<span class="token punctuation">[</span><span class="token string">"speed"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>speed
+    netV<span class="token punctuation">[</span><span class="token string">"mtu"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>mtu
+    net<span class="token punctuation">[</span><span class="token string">"info"</span><span class="token punctuation">]</span> <span class="token operator">=</span> netV
+    netStats<span class="token punctuation">.</span>append<span class="token punctuation">(</span>net<span class="token punctuation">)</span>
+result<span class="token punctuation">[</span><span class="token string">"netStat"</span><span class="token punctuation">]</span> <span class="token operator">=</span> netStats
+<span class="token comment" spellcheck="true"># 磁盘</span>
+<span class="token comment" spellcheck="true"># print ("-----------------------------磁盘信息---------------------------------------")</span>
+disk<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true"># 返回系统磁盘读写统计情况</span>
+<span class="token comment" spellcheck="true"># read_count: 读取次数</span>
+<span class="token comment" spellcheck="true"># write_count: 写入次数</span>
+<span class="token comment" spellcheck="true"># read_bytes:读取的字节数</span>
+<span class="token comment" spellcheck="true"># write_bytes: 写入的字节数</span>
+<span class="token comment" spellcheck="true"># read_time: （除NetBSD,OpenBSD以外的所有）从磁盘读取所花费的时间（以毫秒为单位）</span>
+<span class="token comment" spellcheck="true"># write_time:（除NetBSD,OpenBSD以外的所有）花费在写入磁盘上的时间（以毫秒为单位）</span>
+<span class="token comment" spellcheck="true"># busy_time: （Linux，FreeBSD）花费在执行实际I / O上的时间（以毫秒为单位）</span>
+<span class="token comment" spellcheck="true"># read_merged_count(Linux): 合并读取的数量</span>
+<span class="token comment" spellcheck="true"># write_merged_count(Linux): 合并写入数</span>
+diskRWA <span class="token operator">=</span> psutil<span class="token punctuation">.</span>disk_io_counters<span class="token punctuation">(</span>perdisk<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>nowrap<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+diskRWAll<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+diskRWAll<span class="token punctuation">[</span><span class="token string">"read_count"</span><span class="token punctuation">]</span> <span class="token operator">=</span> diskRWA<span class="token punctuation">.</span>read_count
+diskRWAll<span class="token punctuation">[</span><span class="token string">"write_count"</span><span class="token punctuation">]</span> <span class="token operator">=</span> diskRWA<span class="token punctuation">.</span>write_count
+diskRWAll<span class="token punctuation">[</span><span class="token string">"read_bytes"</span><span class="token punctuation">]</span> <span class="token operator">=</span> diskRWA<span class="token punctuation">.</span>read_bytes
+diskRWAll<span class="token punctuation">[</span><span class="token string">"write_bytes"</span><span class="token punctuation">]</span> <span class="token operator">=</span> diskRWA<span class="token punctuation">.</span>write_bytes
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>diskRWA<span class="token punctuation">,</span> <span class="token string">"read_time"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    diskRWAll<span class="token punctuation">[</span><span class="token string">"read_time"</span><span class="token punctuation">]</span> <span class="token operator">=</span> diskRWA<span class="token punctuation">.</span>read_time
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>diskRWA<span class="token punctuation">,</span> <span class="token string">"write_time"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    diskRWAll<span class="token punctuation">[</span><span class="token string">"write_time"</span><span class="token punctuation">]</span> <span class="token operator">=</span> diskRWA<span class="token punctuation">.</span>write_time
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>diskRWA<span class="token punctuation">,</span> <span class="token string">"busy_time"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    diskRWAll<span class="token punctuation">[</span><span class="token string">"busy_time"</span><span class="token punctuation">]</span> <span class="token operator">=</span> diskRWA<span class="token punctuation">.</span>busy_time
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>diskRWA<span class="token punctuation">,</span> <span class="token string">"read_merged_count"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    diskRWAll<span class="token punctuation">[</span><span class="token string">"read_merged_count"</span><span class="token punctuation">]</span> <span class="token operator">=</span> diskRWA<span class="token punctuation">.</span>read_merged_count
+<span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>diskRWA<span class="token punctuation">,</span> <span class="token string">"write_merged_count"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    diskRWAll<span class="token punctuation">[</span><span class="token string">"write_merged_count"</span><span class="token punctuation">]</span> <span class="token operator">=</span> diskRWA<span class="token punctuation">.</span>write_merged_count
+disk<span class="token punctuation">[</span><span class="token string">"diskRWAll"</span><span class="token punctuation">]</span> <span class="token operator">=</span> diskRWAll
+<span class="token comment" spellcheck="true"># print("磁盘IO(总)："+str(diskRWA))</span>
+partitionDiskRW <span class="token operator">=</span> psutil<span class="token punctuation">.</span>disk_io_counters<span class="token punctuation">(</span>perdisk<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># print("磁盘IO："+str(partitionDiskRW))</span>
+partitionDiskRWAll<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> v<span class="token punctuation">,</span> k <span class="token keyword">in</span> partitionDiskRW<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    partition<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    partition<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token operator">=</span>v
+    partitionInfo<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    partitionInfo<span class="token punctuation">[</span><span class="token string">"read_count"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>read_count
+    partitionInfo<span class="token punctuation">[</span><span class="token string">"write_count"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>write_count
+    partitionInfo<span class="token punctuation">[</span><span class="token string">"read_bytes"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>read_bytes
+    partitionInfo<span class="token punctuation">[</span><span class="token string">"write_bytes"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>write_bytes
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>diskRWA<span class="token punctuation">,</span> <span class="token string">"read_time"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        partitionInfo<span class="token punctuation">[</span><span class="token string">"read_time"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>read_time
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>diskRWA<span class="token punctuation">,</span> <span class="token string">"write_time"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        partitionInfo<span class="token punctuation">[</span><span class="token string">"write_time"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>write_time
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>diskRWA<span class="token punctuation">,</span> <span class="token string">"busy_time"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        partitionInfo<span class="token punctuation">[</span><span class="token string">"busy_time"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>busy_time
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>diskRWA<span class="token punctuation">,</span> <span class="token string">"read_merged_count"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        partitionInfo<span class="token punctuation">[</span><span class="token string">"read_merged_count"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>read_merged_count
+    <span class="token keyword">if</span><span class="token punctuation">(</span>hasattr<span class="token punctuation">(</span>diskRWA<span class="token punctuation">,</span> <span class="token string">"write_merged_count"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        partitionInfo<span class="token punctuation">[</span><span class="token string">"write_merged_count"</span><span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">.</span>write_merged_count
+    partition<span class="token punctuation">[</span><span class="token string">"info"</span><span class="token punctuation">]</span> <span class="token operator">=</span> partitionInfo
+    partitionDiskRWAll<span class="token punctuation">.</span>append<span class="token punctuation">(</span>partition<span class="token punctuation">)</span>
+disk<span class="token punctuation">[</span><span class="token string">"partitionDiskRWAll"</span><span class="token punctuation">]</span> <span class="token operator">=</span> partitionDiskRWAll
+disk_usage<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># 以列表形式返回所有已挂载的分区情况</span>
+<span class="token comment" spellcheck="true"># device:设备</span>
+<span class="token comment" spellcheck="true"># mountpoint:挂载点</span>
+<span class="token comment" spellcheck="true"># fstype:文件系统类型</span>
+<span class="token comment" spellcheck="true"># opts:其它设置如 rw表示可读可写</span>
+<span class="token comment" spellcheck="true"># total:总数(字节)</span>
+<span class="token comment" spellcheck="true"># used:已使用(字节)</span>
+<span class="token comment" spellcheck="true"># free:已准备(字节)</span>
+<span class="token comment" spellcheck="true"># percent:使用率</span>
+io <span class="token operator">=</span> psutil<span class="token punctuation">.</span>disk_partitions<span class="token punctuation">(</span>all<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># print(io)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>io<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 分区的磁盘使用情况统计信息</span>
+    usage <span class="token operator">=</span> psutil<span class="token punctuation">.</span>disk_usage<span class="token punctuation">(</span>io<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>device<span class="token punctuation">)</span>
+    dinfo<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    dinfo<span class="token punctuation">[</span><span class="token string">"device"</span><span class="token punctuation">]</span> <span class="token operator">=</span> io<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>device
+    dinfo<span class="token punctuation">[</span><span class="token string">"mountpoint"</span><span class="token punctuation">]</span> <span class="token operator">=</span> io<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>mountpoint
+    dinfo<span class="token punctuation">[</span><span class="token string">"fstype"</span><span class="token punctuation">]</span> <span class="token operator">=</span> io<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>fstype
+    dinfo<span class="token punctuation">[</span><span class="token string">"opts"</span><span class="token punctuation">]</span> <span class="token operator">=</span> io<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>opts
+    dinfo<span class="token punctuation">[</span><span class="token string">"total"</span><span class="token punctuation">]</span> <span class="token operator">=</span> usage<span class="token punctuation">.</span>total
+    dinfo<span class="token punctuation">[</span><span class="token string">"used"</span><span class="token punctuation">]</span> <span class="token operator">=</span> usage<span class="token punctuation">.</span>used
+    dinfo<span class="token punctuation">[</span><span class="token string">"free"</span><span class="token punctuation">]</span> <span class="token operator">=</span> usage<span class="token punctuation">.</span>free
+    dinfo<span class="token punctuation">[</span><span class="token string">"percent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> usage<span class="token punctuation">.</span>percent
+    disk_usage<span class="token punctuation">.</span>append<span class="token punctuation">(</span>dinfo<span class="token punctuation">)</span>
+disk<span class="token punctuation">[</span><span class="token string">"disk_usage"</span><span class="token punctuation">]</span> <span class="token operator">=</span> disk_usage
+result<span class="token punctuation">[</span><span class="token string">"disk"</span><span class="token punctuation">]</span><span class="token operator">=</span>disk
+<span class="token comment" spellcheck="true"># 查看系统全部进程</span>
+<span class="token comment" spellcheck="true"># pid:进程PID。这是类的唯一（只读）属性。</span>
+<span class="token comment" spellcheck="true"># ppid:进程父PID。</span>
+<span class="token comment" spellcheck="true"># name:进程名称。</span>
+<span class="token comment" spellcheck="true"># username:拥有进程的用户名。在UNIX上，这是通过使用实际进程uid计算的。</span>
+<span class="token comment" spellcheck="true"># status:当前进程状态</span>
+<span class="token comment" spellcheck="true"># create_time:进程创建时间，以浮点数表示，从纪元开始以秒为单位，以UTC为单位。</span>
+<span class="token comment" spellcheck="true"># exe:该进程可执行文件为绝对路径。在某些系统上，这也可能是空字符串。</span>
+<span class="token comment" spellcheck="true"># num_threads:当前由该进程使用的线程数（非累积）。在某些系统上，这也可能是空字符串。</span>
+<span class="token comment" spellcheck="true"># num_handles:此进程当前使用的句柄数（非累积）。可用性：Windows</span>
+<span class="token comment" spellcheck="true"># cwd:进程当前工作目录作为绝对路径。在某些系统上，这也可能是空字符串。</span>
+<span class="token comment" spellcheck="true"># memory_percent:内存使用率在某些系统上，这也可能是空字符串。</span>
+progressAll<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># print(list(psutil.Process().as_dict().keys()))</span>
+<span class="token comment" spellcheck="true"># print(psutil.Process(440).memory_percent())</span>
+<span class="token keyword">for</span> pnum <span class="token keyword">in</span> psutil<span class="token punctuation">.</span>pids<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    p <span class="token operator">=</span> psutil<span class="token punctuation">.</span>Process<span class="token punctuation">(</span>pnum<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># print(p.cpu_percent())</span>
+    progress<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true"># print("进程名 %-20s  内存利用率 %-18s 进程状态 %-10s pid %-10s 进程用户名 %-10s 进程的线程数量 %-10s 创建时间 %-10s " %</span>
+        <span class="token comment" spellcheck="true">#   (p.name(), p.memory_percent(), p.status(), p.pid, p.username(), p.num_threads(), p.create_time()))</span>
+    progress<span class="token punctuation">[</span><span class="token string">"pid"</span><span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">.</span>pid
+    progress<span class="token punctuation">[</span><span class="token string">"ppid"</span><span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">.</span>ppid<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    progress<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">.</span>name<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    progress<span class="token punctuation">[</span><span class="token string">"username"</span><span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">.</span>username<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    progress<span class="token punctuation">[</span><span class="token string">"status"</span><span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">.</span>status<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    progress<span class="token punctuation">[</span><span class="token string">"create_time"</span><span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">.</span>create_time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># progress["memory_percent"] = p.memory_percent()</span>
+    <span class="token comment" spellcheck="true"># progress["num_threads"] = p.num_threads()</span>
+    <span class="token comment" spellcheck="true"># progress["exe"] = p.exe()</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        progress<span class="token punctuation">[</span><span class="token string">"exe"</span><span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">.</span>exe<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        progress<span class="token punctuation">[</span><span class="token string">"exe"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">""</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        progress<span class="token punctuation">[</span><span class="token string">"memory_percent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">.</span>memory_percent<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        progress<span class="token punctuation">[</span><span class="token string">"memory_percent"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">""</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        progress<span class="token punctuation">[</span><span class="token string">"num_threads"</span><span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">.</span>num_threads<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        progress<span class="token punctuation">[</span><span class="token string">"num_threads"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">""</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        progress<span class="token punctuation">[</span><span class="token string">"cwd"</span><span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">.</span>cwd<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        progress<span class="token punctuation">[</span><span class="token string">"cwd"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">""</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        progress<span class="token punctuation">[</span><span class="token string">"num_handles"</span><span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">.</span>num_handles<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        progress<span class="token punctuation">[</span><span class="token string">"num_handles"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">""</span>
+    <span class="token comment" spellcheck="true"># print(progress)</span>
+    progressAll<span class="token punctuation">.</span>append<span class="token punctuation">(</span>progress<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># print(json.dumps(progressAll))</span>
+result<span class="token punctuation">[</span><span class="token string">"progress"</span><span class="token punctuation">]</span> <span class="token operator">=</span> progressAll
+
+<span class="token comment" spellcheck="true"># 返回硬件风扇的速度。每个条目都是一个表示特定硬件传感器风扇的命名元组。风扇速度以RPM（每分钟转数）表示。如果操作系统不支持传感器，则返回空字典</span>
+<span class="token comment" spellcheck="true"># Linux, macOS</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    result<span class="token punctuation">[</span><span class="token string">"fans"</span><span class="token punctuation">]</span> <span class="token operator">=</span> psutil<span class="token punctuation">.</span>sensors_fans<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+    result<span class="token punctuation">[</span><span class="token string">"fans"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true"># 将电池状态信息作为包含以下值的命名元组返回。如果未安装电池或无法确定指标，None 则返回。</span>
+<span class="token comment" spellcheck="true"># percent：剩余电池电量，以百分比表示。</span>
+<span class="token comment" spellcheck="true"># secsleft：电池电量耗尽之前还剩下多少秒的大致估计。如果连接了交流电源线，则将其设置为 psutil.POWER_TIME_UNLIMITED。如果无法确定，则将其设置为 psutil.POWER_TIME_UNKNOWN。</span>
+<span class="token comment" spellcheck="true"># power_plugged：True是否连接了交流电源线，False 如果未连接或None无法确定</span>
+<span class="token comment" spellcheck="true"># Linux, Windows, FreeBSD,macOS</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    result<span class="token punctuation">[</span><span class="token string">"battery"</span><span class="token punctuation">]</span> <span class="token operator">=</span> psutil<span class="token punctuation">.</span>sensors_battery<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+    result<span class="token punctuation">[</span><span class="token string">"battery"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true"># 返回硬件温度。每个条目都是一个表示特定硬件温度传感器的命名元组（它可以是CPU，硬盘或其他东西，具体取决于操作系统及其配置）。如果操作系统不支持传感器，则返回空字典。</span>
+<span class="token comment" spellcheck="true"># Linux, FreeBSD</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    result<span class="token punctuation">[</span><span class="token string">"temperatures"</span><span class="token punctuation">]</span> <span class="token operator">=</span> psutil<span class="token punctuation">.</span>sensors_temperatures<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+    result<span class="token punctuation">[</span><span class="token string">"temperatures"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+
+hostIP<span class="token operator">=</span>get_host_ip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+result<span class="token punctuation">[</span><span class="token string">"ip"</span><span class="token punctuation">]</span> <span class="token operator">=</span> hostIP
+resjson <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># print(len(resjson))</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resjson<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 获取本机计算机名称</span>
+hostname <span class="token operator">=</span> socket<span class="token punctuation">.</span>gethostname<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># print(hostname)</span>
+
+<span class="token comment" spellcheck="true"># print(get_host_ip())</span>
+hashkey <span class="token operator">=</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">'%Y%m%d%H%M%S'</span><span class="token punctuation">,</span>time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+hashkey2 <span class="token operator">=</span> datetime<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">'%Y%m%d%H%M%S'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># print(hashkey2)</span>
+<span class="token comment" spellcheck="true"># print(hashkey)</span>
+<span class="token comment" spellcheck="true"># hash类型存储，以名称和ip为key，以日期（精确到秒YYYYmmddHHMMSS）为hashkey,value为统计结果json</span>
+<span class="token comment" spellcheck="true"># redis可存储2^32个key，hash内可存储2.5亿个key</span>
+
+r<span class="token punctuation">.</span>hset<span class="token punctuation">(</span>hostname<span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>hostIP<span class="token punctuation">,</span> hashkey<span class="token punctuation">,</span> resjson<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 删除hash中的key</span>
+<span class="token comment" spellcheck="true"># 模糊匹配，hk为key，pattern为hash内的key</span>
+<span class="token keyword">def</span> <span class="token function">del_hkeys</span><span class="token punctuation">(</span>hk<span class="token punctuation">,</span>pattern<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># print(hk)</span>
+    <span class="token comment" spellcheck="true"># print(pattern)</span>
+    key_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    keys <span class="token operator">=</span> r<span class="token punctuation">.</span>keys<span class="token punctuation">(</span>hk<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> key <span class="token keyword">in</span> keys<span class="token punctuation">:</span>
+        subkeys <span class="token operator">=</span> r<span class="token punctuation">.</span>hkeys<span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+        key_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> subkeys
+        <span class="token comment" spellcheck="true"># print(subkeys)</span>
+    pipe <span class="token operator">=</span> r<span class="token punctuation">.</span>pipeline<span class="token punctuation">(</span>transaction<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    counter <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> key <span class="token keyword">in</span> key_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        subkeys <span class="token operator">=</span> key_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+        <span class="token keyword">for</span> subkey <span class="token keyword">in</span> subkeys<span class="token punctuation">:</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">(</span>pattern<span class="token punctuation">)</span> <span class="token keyword">in</span> str<span class="token punctuation">(</span>subkey<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                r<span class="token punctuation">.</span>hdel<span class="token punctuation">(</span>key<span class="token punctuation">,</span> subkey<span class="token punctuation">)</span>
+                <span class="token comment" spellcheck="true"># print(subkey)</span>
+            counter <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token keyword">if</span> counter <span class="token operator">></span> <span class="token number">10000</span><span class="token punctuation">:</span>
+                pipe<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    pipe<span class="token punctuation">.</span>execute<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 获取去年时间</span>
+Last_year <span class="token operator">=</span> str<span class="token punctuation">(</span>datetime<span class="token punctuation">.</span>date<span class="token punctuation">.</span>today<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> relativedelta<span class="token punctuation">(</span>months<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"-"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># print(Last_year)</span>
+<span class="token comment" spellcheck="true">#调用删除</span>
+<span class="token comment" spellcheck="true"># del_hkeys(hostname+ip, "20200119173")</span>
+</code></pre>
+<p>输出参数说明</p>
+<pre class=" language-json"><code class="language-json">
+根节点：
+statisticalTime<span class="token operator">:</span>脚本统计时间
+sysStartTime<span class="token operator">:</span>系统启动时间
+platform<span class="token operator">:</span>操作系统及版本信息
+version<span class="token operator">:</span>获取系统版本号
+system<span class="token operator">:</span>获取系统名称（Windows、Linux、FreeBSD等）
+architecture<span class="token operator">:</span>获取操作系统可执行程序的结构('32bit'<span class="token punctuation">,</span> 'WindowsPE'<span class="token punctuation">)</span>（数组）
+machine<span class="token operator">:</span>计算机类型
+node<span class="token operator">:</span>计算机名称
+processor<span class="token operator">:</span>处理器类型
+ip<span class="token operator">:</span>服务器ip地址
+battery<span class="token operator">:</span>电池信息（数组）（Linux<span class="token punctuation">,</span> Windows<span class="token punctuation">,</span> FreeBSD<span class="token punctuation">,</span>macOS）
+    <span class="token number">0</span> 剩余电池电量，以百分比表示。
+    <span class="token number">1</span> 电池电量耗尽之前还剩下多少秒的大致估计。
+    <span class="token number">2</span> <span class="token boolean">True</span>是否连接了交流电源线，<span class="token boolean">False</span> 如果未连接或None无法确定
+fans<span class="token operator">:</span>返回硬件风扇的速度。每个条目都是一个表示特定硬件传感器风扇的命名元组。风扇速度以RPM（每分钟转数）表示。如果操作系统不支持传感器，则返回空字典（Linux<span class="token punctuation">,</span> macOS）
+temperatures<span class="token operator">:</span>返回硬件温度。每个条目都是一个表示特定硬件温度传感器的命名元组（它可以是CPU，硬盘或其他东西，具体取决于操作系统及其配置）。如果操作系统不支持传感器，则返回空字典。（Linux<span class="token punctuation">,</span> FreeBSD）
+cpu：cpu信息
+    physics<span class="token operator">:</span>物理cpu个数
+    logic<span class="token operator">:</span>逻辑cpu个数
+    percent<span class="token operator">:</span>cpu总利用率
+    logicPercent<span class="token operator">:</span>逻辑cpu利用率（数组）
+    physicsInfo<span class="token operator">:</span>cpu整体情况
+        user<span class="token operator">:</span>在用户模式下执行普通进程所花费的时间；在Linux上，这还包括访客时间
+        system<span class="token operator">:</span>在内核模式下执行的进程所花费的时间
+        idle<span class="token operator">:</span> 无所事事的时间
+        nice(UNIX<span class="token punctuation">)</span><span class="token operator">:</span> niced(优先级<span class="token punctuation">)</span>进程在用户模式下执行所花费的时间<span class="token punctuation">;</span>在Linux上，这也包括了guest_nice时间
+        iowait(Linux<span class="token punctuation">)</span><span class="token operator">:</span> 等待I/O完成所花费的时间
+        irq(Linux<span class="token punctuation">,</span> BSD<span class="token punctuation">)</span><span class="token operator">:</span> 用于服务硬件中断的时间
+        softirq(Linux<span class="token punctuation">)</span><span class="token operator">:</span> 用于服务软件中断的时间
+        steal(Linux <span class="token number">2.6</span>.<span class="token number">11</span>+<span class="token punctuation">)</span><span class="token operator">:</span> 在虚拟环境中运行的其他操作系统所花费的时间
+        guest(Linux <span class="token number">2.6</span>.<span class="token number">24</span>+<span class="token punctuation">)</span><span class="token operator">:</span> 在Linux内核控制下运行来宾操作系统的虚拟CPU所花费的时间
+        guest_nice (Linux <span class="token number">3.2</span>.<span class="token number">0</span>+<span class="token punctuation">)</span><span class="token operator">:</span> 运行niced客户机(Linux内核控制下的客户机操作系统的虚拟CPU<span class="token punctuation">)</span>的时间
+        interrupt(Windows<span class="token punctuation">)</span><span class="token operator">:</span> 用于服务硬件中断的时间(类似于UNIX上的“irq”<span class="token punctuation">)</span>
+        dpc (Windows<span class="token punctuation">)</span><span class="token operator">:</span> 服务延迟程序调用(DPCs<span class="token punctuation">)</span>的时间<span class="token punctuation">;</span>DPCs是运行在低于标准中断优先级的中断。
+    logicInfo：各个逻辑cpu信息（数组）
+        user<span class="token operator">:</span>在用户模式下执行普通进程所花费的时间；在Linux上，这还包括访客时间
+        system<span class="token operator">:</span>在内核模式下执行的进程所花费的时间
+        idle<span class="token operator">:</span> 无所事事的时间
+        nice(UNIX<span class="token punctuation">)</span><span class="token operator">:</span> niced(优先级<span class="token punctuation">)</span>进程在用户模式下执行所花费的时间<span class="token punctuation">;</span>在Linux上，这也包括了guest_nice时间
+        iowait(Linux<span class="token punctuation">)</span><span class="token operator">:</span> 等待I/O完成所花费的时间
+        irq(Linux<span class="token punctuation">,</span> BSD<span class="token punctuation">)</span><span class="token operator">:</span> 用于服务硬件中断的时间
+        softirq(Linux<span class="token punctuation">)</span><span class="token operator">:</span> 用于服务软件中断的时间
+        steal(Linux <span class="token number">2.6</span>.<span class="token number">11</span>+<span class="token punctuation">)</span><span class="token operator">:</span> 在虚拟环境中运行的其他操作系统所花费的时间
+        guest(Linux <span class="token number">2.6</span>.<span class="token number">24</span>+<span class="token punctuation">)</span><span class="token operator">:</span> 在Linux内核控制下运行来宾操作系统的虚拟CPU所花费的时间
+        guest_nice (Linux <span class="token number">3.2</span>.<span class="token number">0</span>+<span class="token punctuation">)</span><span class="token operator">:</span> 运行niced客户机(Linux内核控制下的客户机操作系统的虚拟CPU<span class="token punctuation">)</span>的时间
+        interrupt(Windows<span class="token punctuation">)</span><span class="token operator">:</span> 用于服务硬件中断的时间(类似于UNIX上的“irq”<span class="token punctuation">)</span>
+        dpc (Windows<span class="token punctuation">)</span><span class="token operator">:</span> 服务延迟程序调用(DPCs<span class="token punctuation">)</span>的时间<span class="token punctuation">;</span>DPCs是运行在低于标准中断优先级的中断。
+memory：内存信息
+    total<span class="token operator">:</span> 总的物理内存
+    available：不需要系统进入交换分区，可以立即分给线程的内存，这个值代表了系统可使用的内存情况
+    percent<span class="token operator">:</span> 系统内存使用率，percent = (total-available<span class="token punctuation">)</span>/total*<span class="token number">100</span>
+    used<span class="token operator">:</span> 已使用的内存，注意：total- free不一定等于used.
+    free<span class="token operator">:</span> 已准备好，但是还一点都没被使用的内存<span class="token punctuation">,</span>注意：total- used不一定等于free
+    active (UNIX<span class="token punctuation">)</span><span class="token operator">:</span>当前正在使用或最近使用过的内存，因此它位于RAM中。
+    inactive (UNIX<span class="token punctuation">)</span><span class="token operator">:</span>标记为未使用的内存。
+    buffers (Linux<span class="token punctuation">,</span> BSD<span class="token punctuation">)</span><span class="token operator">:</span>缓存文件系统元数据之类的东西。
+    cached (Linux<span class="token punctuation">,</span> BSD<span class="token punctuation">)</span><span class="token operator">:</span>缓存各种东西。
+    shared (Linux<span class="token punctuation">,</span> BSD<span class="token punctuation">)</span><span class="token operator">:</span>可以由多个进程同时访问的内存。
+    slab (Linux<span class="token punctuation">)</span><span class="token operator">:</span>内核数据结构缓存。
+    wired (BSD<span class="token punctuation">,</span> macOS<span class="token punctuation">)</span><span class="token operator">:</span>标记为始终保留在RAM中的内存。它永远不会移动到磁盘。
+    total<span class="token operator">:</span> 总交换内存（以字节为单位）
+    used<span class="token operator">:</span> 使用的交换内存（以字节为单位）
+    free<span class="token operator">:</span> 可用字节交换内存
+    percent<span class="token operator">:</span> 使用率计算为 (total - available<span class="token punctuation">)</span> / total * <span class="token number">100</span>
+    sin<span class="token operator">:</span> 系统已从磁盘交换的字节数（累积）
+    sout<span class="token operator">:</span> 系统已从磁盘换出的字节数（累积）
+user：用户信息（数组）
+    name<span class="token operator">:</span> 用户名。
+    terminal<span class="token operator">:</span> 与用户关联的tty或伪tty（如果有），否则为None。
+    host<span class="token operator">:</span> 与条目关联的主机名（如果有）。
+    started<span class="token operator">:</span> 创建时间，以浮点数为单位，以自纪元以​​来的秒数表示。
+    pid<span class="token operator">:</span> 登录过程的PID（如sshd，tmux，gdm-session-worker等）。在Windows和OpenBSD上，始终将其设置为None。
+netInfoAll：网络流量信息（总）
+    bytes_sent<span class="token operator">:</span> 发送的字节数
+    bytes_recv<span class="token operator">:</span> 收到的字节数
+    packets_sent<span class="token operator">:</span> 发送的包数
+    packets_recv<span class="token operator">:</span> 收到的包数
+    errin<span class="token operator">:</span> 接收时的错误总数
+    errout<span class="token operator">:</span> 发送时的错误总数
+    dropin<span class="token operator">:</span> 被丢弃的入站数据包总数
+    dropout<span class="token operator">:</span> 丢弃的传出数据包总数（在macOS和BSD上始终为<span class="token number">0</span>）
+netInfo：网络流量信息（各个网卡连接）（数组）
+    name<span class="token operator">:</span>网卡名称
+    info：网卡信息
+        bytes_sent<span class="token operator">:</span> 发送的字节数
+        bytes_recv<span class="token operator">:</span> 收到的字节数
+        packets_sent<span class="token operator">:</span> 发送的包数
+        packets_recv<span class="token operator">:</span> 收到的包数
+        errin<span class="token operator">:</span> 接收时的错误总数
+        errout<span class="token operator">:</span> 发送时的错误总数
+        dropin<span class="token operator">:</span> 被丢弃的入站数据包总数
+        dropout<span class="token operator">:</span> 丢弃的传出数据包总数（在macOS和BSD上始终为<span class="token number">0</span>）
+netStat：网卡状态（各个网卡）（数组）
+    name<span class="token operator">:</span>网卡名称
+    info：网卡信息
+        isup<span class="token operator">:</span> 一个布尔值，指示NIC是否已启动并正在运行。
+        duplex<span class="token operator">:</span> 双工通信类型；可以是 NIC_DUPLEX_FULL<span class="token punctuation">,</span> NIC_DUPLEX_HALF <span class="token punctuation">,</span> NIC_DUPLEX_UNKNOWN.
+        speed<span class="token operator">:</span> NIC速度（以兆位（MB）表示），如果无法确定（例如“ localhost”），则会将其设置为<span class="token number">0</span>。
+        mtu<span class="token operator">:</span> NIC的最大传输单位，以字节为单位。
+disk<span class="token operator">:</span>磁盘信息
+    diskRWAll<span class="token operator">:</span>磁盘总体信息
+        read_count<span class="token operator">:</span> 读取次数
+        write_count<span class="token operator">:</span> 写入次数
+        read_bytes<span class="token operator">:</span>读取的字节数
+        write_bytes<span class="token operator">:</span> 写入的字节数
+        read_time<span class="token operator">:</span> （除NetBSD<span class="token punctuation">,</span>OpenBSD以外的所有）从磁盘读取所花费的时间（以毫秒为单位）
+        write_time<span class="token operator">:</span>（除NetBSD<span class="token punctuation">,</span>OpenBSD以外的所有）花费在写入磁盘上的时间（以毫秒为单位）
+        busy_time<span class="token operator">:</span> （Linux，FreeBSD）花费在执行实际I / O上的时间（以毫秒为单位）
+        read_merged_count(Linux<span class="token punctuation">)</span><span class="token operator">:</span> 合并读取的数量
+        write_merged_count(Linux<span class="token punctuation">)</span><span class="token operator">:</span> 合并写入数
+    partitionDiskRWAll<span class="token operator">:</span>磁盘各个挂载磁盘信息（数组）
+        name<span class="token operator">:</span>分区名(同通过此命令查看到的名称。cat /proc/partitions<span class="token punctuation">)</span>
+        info：磁盘信息
+            read_count<span class="token operator">:</span> 读取次数
+            write_count<span class="token operator">:</span> 写入次数
+            read_bytes<span class="token operator">:</span>读取的字节数
+            write_bytes<span class="token operator">:</span> 写入的字节数
+            read_time<span class="token operator">:</span> （除NetBSD<span class="token punctuation">,</span>OpenBSD以外的所有）从磁盘读取所花费的时间（以毫秒为单位）
+            write_time<span class="token operator">:</span>（除NetBSD<span class="token punctuation">,</span>OpenBSD以外的所有）花费在写入磁盘上的时间（以毫秒为单位）
+            busy_time<span class="token operator">:</span> （Linux，FreeBSD）花费在执行实际I / O上的时间（以毫秒为单位）
+            read_merged_count(Linux<span class="token punctuation">)</span><span class="token operator">:</span> 合并读取的数量
+            write_merged_count(Linux<span class="token punctuation">)</span><span class="token operator">:</span> 合并写入数
+    disk_usage<span class="token operator">:</span>所有已挂载的分区情况（数组）
+        device<span class="token operator">:</span>设备
+        mountpoint<span class="token operator">:</span>挂载点
+        fstype<span class="token operator">:</span>文件系统类型
+        opts<span class="token operator">:</span>其它设置如 rw表示可读可写
+        total<span class="token operator">:</span>总数(字节<span class="token punctuation">)</span>
+        used<span class="token operator">:</span>已使用(字节<span class="token punctuation">)</span>
+        free<span class="token operator">:</span>已准备(字节<span class="token punctuation">)</span>
+        percent<span class="token operator">:</span>使用率
+progress<span class="token operator">:</span>进程信息（数组）
+    pid<span class="token operator">:</span>进程PID。这是类的唯一（只读）属性。
+    ppid<span class="token operator">:</span>进程父PID。
+    name<span class="token operator">:</span>进程名称。
+    username<span class="token operator">:</span>拥有进程的用户名。在UNIX上，这是通过使用实际进程uid计算的。
+    status<span class="token operator">:</span>当前进程状态
+    create_time<span class="token operator">:</span>进程创建时间，以浮点数表示，从纪元开始以秒为单位，以UTC为单位。
+    exe<span class="token operator">:</span>该进程可执行文件为绝对路径。在某些系统上，这也可能是空字符串。
+    num_threads<span class="token operator">:</span>当前由该进程使用的线程数。在某些系统上，这也可能是空字符串。
+    num_handles<span class="token operator">:</span>此进程当前使用的句柄数。可用性：Windows
+    cwd<span class="token operator">:</span>进程当前工作目录作为绝对路径。在某些系统上，这也可能是空字符串。
+    memory_percent<span class="token operator">:</span>内存使用率。在某些系统上，这也可能是空字符串。</code></pre>
+
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script src="/libs/others/md5.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '968642bc6faa447e79d0',
+        clientSecret: 'cbbda9af6a5ab1a49a053eab50aa6be46a418da4',
+        repo: 'gitalk',
+        owner: 'zhangyongbo',
+        admin: "zhangyongbo",
+        id: md5('2020/08/08/python-huo-qu-fu-wu-qi-xin-xi/'),
+        createIssueManually:false,
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/08/08/maven-guan-wang-mei-you-wo-men-xu-yao-de-jar-zen-me-ban/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/38.jpg" class="responsive-img" alt="Maven官网没有我们需要的jar怎么办">
+                        
+                        <span class="card-title">Maven官网没有我们需要的jar怎么办</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Maven官网没有我们需要的jar怎么办解决办法：对于官网没有的jar包，maven向本地仓库导入jar包用如下命令
+
+mvn install:install-file    -DgroupId=包名    -DartifactId=项目名
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Maven/" class="post-category" target="_blank">
+                                    Maven
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/08/08/weblogic-miao-shu-wen-jian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="WebLogic描述文件">
+                        
+                        <span class="card-title">WebLogic描述文件</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            web程序WebLogic下描述文件web程序weblogic下描述文件
+weblogic.xml
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;weblogic-web-app xmlns="
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Middleware/" class="post-category" target="_blank">
+                                    Middleware
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2019 ZhangYongBo. All Rights Reserved.
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">190k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/zhangyongbo" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:china.zhangyongbo@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://user.qzone.qq.com/785419852" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="weixin://contacts/profile/zybforwx" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-wechat"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 0;
+        var uvcountOffset = 0;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv")!=null&&document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2015, 12, 04, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+
+</body>
+</html>
