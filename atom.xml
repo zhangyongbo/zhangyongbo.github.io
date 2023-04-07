@@ -5,9 +5,9 @@
   <subtitle>一个码农的胡言乱语……</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://china_zyb.gitee.io/"/>
+  <link href="https://zhangyongbo.github.io/"/>
   <updated>2023-04-07T06:47:43.408Z</updated>
-  <id>http://china_zyb.gitee.io/</id>
+  <id>https://zhangyongbo.github.io/</id>
   
   <author>
     <name>Z先生</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Linux下LibreOffice安装</title>
-    <link href="http://china_zyb.gitee.io/2021/06/14/linux-xia-libreoffice-an-zhuang/"/>
-    <id>http://china_zyb.gitee.io/2021/06/14/linux-xia-libreoffice-an-zhuang/</id>
+    <link href="https://zhangyongbo.github.io/2021/06/14/linux-xia-libreoffice-an-zhuang/"/>
+    <id>https://zhangyongbo.github.io/2021/06/14/linux-xia-libreoffice-an-zhuang/</id>
     <published>2021-06-14T01:52:35.000Z</published>
     <updated>2023-04-07T06:47:43.408Z</updated>
     
@@ -36,15 +36,15 @@
     </summary>
     
     
-      <category term="Linux" scheme="http://china_zyb.gitee.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://zhangyongbo.github.io/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
     <title>Linux下字体安装</title>
-    <link href="http://china_zyb.gitee.io/2021/06/14/linux-xia-zi-ti-an-zhuang/"/>
-    <id>http://china_zyb.gitee.io/2021/06/14/linux-xia-zi-ti-an-zhuang/</id>
+    <link href="https://zhangyongbo.github.io/2021/06/14/linux-xia-zi-ti-an-zhuang/"/>
+    <id>https://zhangyongbo.github.io/2021/06/14/linux-xia-zi-ti-an-zhuang/</id>
     <published>2021-06-14T01:51:01.000Z</published>
     <updated>2023-04-07T06:47:43.773Z</updated>
     
@@ -64,15 +64,15 @@
     </summary>
     
     
-      <category term="Linux" scheme="http://china_zyb.gitee.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://zhangyongbo.github.io/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
     <title>EasyUI ComboTree</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/easyui-combotree/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/easyui-combotree/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/easyui-combotree/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/easyui-combotree/</id>
     <published>2020-08-08T23:34:10.000Z</published>
     <updated>2023-04-07T07:06:01.751Z</updated>
     
@@ -89,15 +89,15 @@
     </summary>
     
     
-      <category term="Web" scheme="http://china_zyb.gitee.io/categories/Web/"/>
+      <category term="Web" scheme="https://zhangyongbo.github.io/categories/Web/"/>
     
     
   </entry>
   
   <entry>
     <title>EasyUI 取消选中行高亮</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/easyui-qu-xiao-xuan-zhong-xing-gao-liang/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/easyui-qu-xiao-xuan-zhong-xing-gao-liang/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/easyui-qu-xiao-xuan-zhong-xing-gao-liang/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/easyui-qu-xiao-xuan-zhong-xing-gao-liang/</id>
     <published>2020-08-08T23:34:00.000Z</published>
     <updated>2023-04-07T06:51:48.550Z</updated>
     
@@ -114,15 +114,15 @@
     </summary>
     
     
-      <category term="Web" scheme="http://china_zyb.gitee.io/categories/Web/"/>
+      <category term="Web" scheme="https://zhangyongbo.github.io/categories/Web/"/>
     
     
   </entry>
   
   <entry>
     <title>Ajax加载数据加载中遮罩</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/ajax-jia-zai-shu-ju-jia-zai-zhong-zhe-zhao/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/ajax-jia-zai-shu-ju-jia-zai-zhong-zhe-zhao/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/ajax-jia-zai-shu-ju-jia-zai-zhong-zhe-zhao/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/ajax-jia-zai-shu-ju-jia-zai-zhong-zhe-zhao/</id>
     <published>2020-08-08T23:33:44.000Z</published>
     <updated>2023-04-07T06:51:49.342Z</updated>
     
@@ -139,15 +139,15 @@
     </summary>
     
     
-      <category term="Web" scheme="http://china_zyb.gitee.io/categories/Web/"/>
+      <category term="Web" scheme="https://zhangyongbo.github.io/categories/Web/"/>
     
     
   </entry>
   
   <entry>
     <title>MySQL重置密码，环境变量</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/mysql-chong-zhi-mi-ma-huan-jing-bian-liang/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/mysql-chong-zhi-mi-ma-huan-jing-bian-liang/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/mysql-chong-zhi-mi-ma-huan-jing-bian-liang/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/mysql-chong-zhi-mi-ma-huan-jing-bian-liang/</id>
     <published>2020-08-08T23:33:04.000Z</published>
     <updated>2023-04-07T06:44:02.073Z</updated>
     
@@ -164,15 +164,15 @@
     </summary>
     
     
-      <category term="DataBase" scheme="http://china_zyb.gitee.io/categories/DataBase/"/>
+      <category term="DataBase" scheme="https://zhangyongbo.github.io/categories/DataBase/"/>
     
     
   </entry>
   
   <entry>
     <title>MySQL建表执行初始化脚本</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/mysql-jian-biao-zhi-xing-chu-shi-hua-jiao-ben/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/mysql-jian-biao-zhi-xing-chu-shi-hua-jiao-ben/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/mysql-jian-biao-zhi-xing-chu-shi-hua-jiao-ben/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/mysql-jian-biao-zhi-xing-chu-shi-hua-jiao-ben/</id>
     <published>2020-08-08T23:32:48.000Z</published>
     <updated>2023-04-07T06:44:01.269Z</updated>
     
@@ -189,15 +189,15 @@
     </summary>
     
     
-      <category term="DataBase" scheme="http://china_zyb.gitee.io/categories/DataBase/"/>
+      <category term="DataBase" scheme="https://zhangyongbo.github.io/categories/DataBase/"/>
     
     
   </entry>
   
   <entry>
     <title>同表、同字段、3段查询</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/tong-biao-tong-zi-duan-3-duan-cha-xun/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/tong-biao-tong-zi-duan-3-duan-cha-xun/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/tong-biao-tong-zi-duan-3-duan-cha-xun/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/tong-biao-tong-zi-duan-3-duan-cha-xun/</id>
     <published>2020-08-08T23:30:18.000Z</published>
     <updated>2023-04-07T07:06:01.730Z</updated>
     
@@ -214,15 +214,15 @@
     </summary>
     
     
-      <category term="DataBase" scheme="http://china_zyb.gitee.io/categories/DataBase/"/>
+      <category term="DataBase" scheme="https://zhangyongbo.github.io/categories/DataBase/"/>
     
     
   </entry>
   
   <entry>
     <title>Cornerstone 3 添加外部diff工具</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/cornerstone-3-tian-jia-wai-bu-diff-gong-ju/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/cornerstone-3-tian-jia-wai-bu-diff-gong-ju/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/cornerstone-3-tian-jia-wai-bu-diff-gong-ju/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/cornerstone-3-tian-jia-wai-bu-diff-gong-ju/</id>
     <published>2020-08-08T23:30:04.000Z</published>
     <updated>2023-04-07T07:06:01.628Z</updated>
     
@@ -239,15 +239,15 @@
     </summary>
     
     
-      <category term="Other" scheme="http://china_zyb.gitee.io/categories/Other/"/>
+      <category term="Other" scheme="https://zhangyongbo.github.io/categories/Other/"/>
     
     
   </entry>
   
   <entry>
     <title>Cornerstone 简易教程</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/cornerstone-jian-yi-jiao-cheng/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/cornerstone-jian-yi-jiao-cheng/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/cornerstone-jian-yi-jiao-cheng/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/cornerstone-jian-yi-jiao-cheng/</id>
     <published>2020-08-08T23:30:04.000Z</published>
     <updated>2023-04-07T07:06:01.865Z</updated>
     
@@ -264,15 +264,15 @@
     </summary>
     
     
-      <category term="SvnGit" scheme="http://china_zyb.gitee.io/categories/SvnGit/"/>
+      <category term="SvnGit" scheme="https://zhangyongbo.github.io/categories/SvnGit/"/>
     
     
   </entry>
   
   <entry>
     <title>Eclipse 配置Maven web项目</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/eclipse-pei-zhi-maven-web-xiang-mu/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/eclipse-pei-zhi-maven-web-xiang-mu/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/eclipse-pei-zhi-maven-web-xiang-mu/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/eclipse-pei-zhi-maven-web-xiang-mu/</id>
     <published>2020-08-08T23:30:04.000Z</published>
     <updated>2023-04-07T07:06:01.846Z</updated>
     
@@ -289,15 +289,15 @@
     </summary>
     
     
-      <category term="Maven" scheme="http://china_zyb.gitee.io/categories/Maven/"/>
+      <category term="Maven" scheme="https://zhangyongbo.github.io/categories/Maven/"/>
     
     
   </entry>
   
   <entry>
     <title>IntelliJ IDEA设置</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/intellij-idea-she-zhi/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/intellij-idea-she-zhi/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/intellij-idea-she-zhi/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/intellij-idea-she-zhi/</id>
     <published>2020-08-08T23:30:04.000Z</published>
     <updated>2023-04-07T07:06:01.751Z</updated>
     
@@ -314,15 +314,15 @@
     </summary>
     
     
-      <category term="Other" scheme="http://china_zyb.gitee.io/categories/Other/"/>
+      <category term="Other" scheme="https://zhangyongbo.github.io/categories/Other/"/>
     
     
   </entry>
   
   <entry>
     <title>Linux下Vbox中的共享文件夹配置</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/linux-xia-vbox-zhong-de-gong-xiang-wen-jian-jia-pei-zhi/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/linux-xia-vbox-zhong-de-gong-xiang-wen-jian-jia-pei-zhi/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/linux-xia-vbox-zhong-de-gong-xiang-wen-jian-jia-pei-zhi/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/linux-xia-vbox-zhong-de-gong-xiang-wen-jian-jia-pei-zhi/</id>
     <published>2020-08-08T23:30:04.000Z</published>
     <updated>2023-04-07T07:06:01.628Z</updated>
     
@@ -339,15 +339,15 @@
     </summary>
     
     
-      <category term="Linux" scheme="http://china_zyb.gitee.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://zhangyongbo.github.io/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
     <title>Mac环境下svn的使用</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/mac-huan-jing-xia-svn-de-shi-yong/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/mac-huan-jing-xia-svn-de-shi-yong/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/mac-huan-jing-xia-svn-de-shi-yong/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/mac-huan-jing-xia-svn-de-shi-yong/</id>
     <published>2020-08-08T23:30:04.000Z</published>
     <updated>2023-04-07T07:06:01.730Z</updated>
     
@@ -364,15 +364,15 @@
     </summary>
     
     
-      <category term="SvnGit" scheme="http://china_zyb.gitee.io/categories/SvnGit/"/>
+      <category term="SvnGit" scheme="https://zhangyongbo.github.io/categories/SvnGit/"/>
     
     
   </entry>
   
   <entry>
     <title>Maven入门</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/maven-ru-men/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/maven-ru-men/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/maven-ru-men/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/maven-ru-men/</id>
     <published>2020-08-08T23:30:04.000Z</published>
     <updated>2023-04-07T07:06:01.628Z</updated>
     
@@ -389,15 +389,15 @@
     </summary>
     
     
-      <category term="Maven" scheme="http://china_zyb.gitee.io/categories/Maven/"/>
+      <category term="Maven" scheme="https://zhangyongbo.github.io/categories/Maven/"/>
     
     
   </entry>
   
   <entry>
     <title>SSH本地端口转发</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/ssh-ben-di-duan-kou-zhuan-fa/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/ssh-ben-di-duan-kou-zhuan-fa/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/ssh-ben-di-duan-kou-zhuan-fa/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/ssh-ben-di-duan-kou-zhuan-fa/</id>
     <published>2020-08-08T23:30:04.000Z</published>
     <updated>2023-04-07T07:06:01.770Z</updated>
     
@@ -414,15 +414,15 @@
     </summary>
     
     
-      <category term="Linux" scheme="http://china_zyb.gitee.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://zhangyongbo.github.io/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
     <title>修改svn保存的帐号密码</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/xiu-gai-svn-bao-cun-de-zhang-hao-mi-ma/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/xiu-gai-svn-bao-cun-de-zhang-hao-mi-ma/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/xiu-gai-svn-bao-cun-de-zhang-hao-mi-ma/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/xiu-gai-svn-bao-cun-de-zhang-hao-mi-ma/</id>
     <published>2020-08-08T23:30:04.000Z</published>
     <updated>2023-04-07T07:06:01.628Z</updated>
     
@@ -439,15 +439,15 @@
     </summary>
     
     
-      <category term="SvnGit" scheme="http://china_zyb.gitee.io/categories/SvnGit/"/>
+      <category term="SvnGit" scheme="https://zhangyongbo.github.io/categories/SvnGit/"/>
     
     
   </entry>
   
   <entry>
     <title>用 Maven 做项目构建</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/yong-maven-zuo-xiang-mu-gou-jian/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/yong-maven-zuo-xiang-mu-gou-jian/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/yong-maven-zuo-xiang-mu-gou-jian/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/yong-maven-zuo-xiang-mu-gou-jian/</id>
     <published>2020-08-08T23:30:04.000Z</published>
     <updated>2023-04-07T07:06:01.650Z</updated>
     
@@ -464,15 +464,15 @@
     </summary>
     
     
-      <category term="Maven" scheme="http://china_zyb.gitee.io/categories/Maven/"/>
+      <category term="Maven" scheme="https://zhangyongbo.github.io/categories/Maven/"/>
     
     
   </entry>
   
   <entry>
     <title>Apache Commons DbUtils</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/apache-commons-dbutils/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/apache-commons-dbutils/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/apache-commons-dbutils/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/apache-commons-dbutils/</id>
     <published>2020-08-08T23:29:38.000Z</published>
     <updated>2023-04-07T07:06:01.845Z</updated>
     
@@ -489,15 +489,15 @@
     </summary>
     
     
-      <category term="DataBase" scheme="http://china_zyb.gitee.io/categories/DataBase/"/>
+      <category term="DataBase" scheme="https://zhangyongbo.github.io/categories/DataBase/"/>
     
     
   </entry>
   
   <entry>
     <title>EasyUI form表单load表单数据加载完成后触发</title>
-    <link href="http://china_zyb.gitee.io/2020/08/09/easyui-form-biao-dan-load-biao-dan-shu-ju-jia-zai-wan-cheng-hou-hong-fa/"/>
-    <id>http://china_zyb.gitee.io/2020/08/09/easyui-form-biao-dan-load-biao-dan-shu-ju-jia-zai-wan-cheng-hou-hong-fa/</id>
+    <link href="https://zhangyongbo.github.io/2020/08/09/easyui-form-biao-dan-load-biao-dan-shu-ju-jia-zai-wan-cheng-hou-hong-fa/"/>
+    <id>https://zhangyongbo.github.io/2020/08/09/easyui-form-biao-dan-load-biao-dan-shu-ju-jia-zai-wan-cheng-hou-hong-fa/</id>
     <published>2020-08-08T23:29:38.000Z</published>
     <updated>2023-04-07T07:08:46.201Z</updated>
     
@@ -514,7 +514,7 @@
     </summary>
     
     
-      <category term="Web" scheme="http://china_zyb.gitee.io/categories/Web/"/>
+      <category term="Web" scheme="https://zhangyongbo.github.io/categories/Web/"/>
     
     
   </entry>
