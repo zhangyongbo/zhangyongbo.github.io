@@ -95,6 +95,6 @@ https://zhangyongbo.github.io/2019/08/31/java-hou-tai-diao-yong-http-jie-kou/
 https://zhangyongbo.github.io/2019/08/31/cron-biao-da-shi-sheng-cheng-qi/
 https://zhangyongbo.github.io/2019/08/28/guan-bi-mac-os-xi-tong-cheng-xu-beng-kui-bao-gao/
 https://zhangyongbo.github.io/2019/08/28/gao-xiao-yong-google/
-https://zhangyongbo.github.io/2019/08/19/activiti-liu-cheng-gen-zong-tu-lian-jie-xian-wen-zi-bu-xian-shi-wen-ti/
-https://zhangyongbo.github.io/2019/08/19/activiti-huo-qu-mo-xing-tu-pian-huo-bu-shu-tu-pian/
-https://zhangyongbo.github.io/2019/08/19/activiti-huo-qu-liu-cheng-gen-zong-tu/
+https://zhangyongbo.github.io/2019/08/19/annotationprocessor-zhuan-huan-cuo-wu/
+https://zhangyongbo.github.io/2019/08/19/apache-commons-dbutil-zu-jian-de-shu-ju-ku-cao-zuo-lei/
+https://zhangyongbo.github.io/2019/08/19/base64-zhuan-huan/
